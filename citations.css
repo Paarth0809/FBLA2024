@@ -1,0 +1,46 @@
+#citation-sources {
+    font-size: 5rem;
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(to right, #092069, #00defb);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    margin-left: 2rem;
+}
+
+.master-container {
+    display: flex;
+    /* border: 1px solid red; */
+}
+
+.container-for-sources {
+    display: flex;
+    /* border: 1px dashed green; */
+    width: 100%;
+    flex-direction: column;
+}
+
+.images-other {
+    color: #6C757D;
+    font-size: 2rem;
+    font-family: "poppins";
+    margin: 0 auto;
+}
+
+#sources-table {
+    width: 100%;
+    /* border: none; */
+}
+
+.small-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.small-container a {
+    color: #6C757D;
+    text-decoration: none;
+}
+
+.small-container-items {
+    border: 1px solid black;
+}

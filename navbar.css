@@ -1,0 +1,149 @@
+/* body default appearance */
+body {
+  margin: 0;
+  background: #FFFFFF;
+}
+/* navbar appearance */
+.navbar {
+  display: flex;
+  background-color: rgb(255, 255, 255);
+  padding: 0;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.1rem;
+
+}
+/* logo appear */
+#logo {
+  max-width: 12rem;
+  border-radius: 2rem;
+}
+
+  
+  /* Apply the animation to the link */
+  #logo:hover {
+    animation: scaleUp 0.5s ease forwards;
+  }
+
+#nav-bar-split {
+  border-width: .1rem;
+  color: black;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+
+}
+
+#Contactmargin {
+  margin-right: 3rem;
+}
+
+.links {
+  color: #6C757D;
+  transition: transform 0.5s ease;
+  /* Add a smooth transition effect */
+}
+
+/* Define the scale-up animation */
+@keyframes scaleUp {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.1);
+  }
+
+  /* Scale up to 110% */
+}
+
+/* Apply the animation to the link */
+.links:hover {
+  animation: scaleUp 0.5s ease forwards;
+}
+
+
+/* Style the navigation menu */
+.topnav {
+  overflow: hidden;
+  /* background: linear-gradient(to right, rgb(0, 0, 0), #20A0D8); */
+  background-color: white;
+  border-bottom: 3px solid;
+  border-color: linear-gradient(180deg, #092069, #20A0D8);
+  position: relative;
+  display: none;
+  font-family: "Poppins";
+}
+
+/* Hide the links inside the navigation menu (except for logo/home) */
+.topnav #myLinks {
+  display: none;
+}
+
+.linkcolor {
+  color: black;
+}
+
+/* Style navigation menu links */
+.topnav a {
+  color: black;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+
+/* Style the hamburger menu */
+.topnav a.icon {
+  background: white;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* Add a grey background color on mouse-over */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Style the active link (or home/logo) */
+.active {
+  background-color: #20A0D8;
+  color: white;
+}
+
+@media (max-width: 450px) {
+  #Gradeintext {
+    font-size: 2rem;
+  }
+
+  #benefits {
+    font-size: 0.7rem;
+
+  }
+
+  #logo {
+    max-width: 6rem;
+  }
+
+}
+
+@media (max-width:710px) {
+  .links {
+    visibility: hidden;
+  }
+
+  .navbar {
+    display: none;
+
+  }
+
+  .topnav {
+    display: block;
+  }
+}

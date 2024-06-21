@@ -1,0 +1,92 @@
+/* team image appearance */
+.team {
+  display: block;
+  margin: 0 auto;
+  border-radius: 20px;
+  max-width: 70%;
+}
+
+.team:hover {
+  animation: scaleUpTeamImage 0.5s ease forwards;
+}
+
+@keyframes scaleUpTeamImage {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.05);
+  }
+}
+
+/* container for h1, text and button */
+#Persuade {
+  flex-direction: column;
+  display: flex;
+  text-align: center;
+
+}
+
+/* h1 color gradient */
+#Gradeintext {
+  font-size: 7rem;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(to right, #092069, #00defb);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  margin: 0;
+}
+
+/* text appearance */
+#benefits {
+  color: #6C757D;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem;
+  text-align: justify;
+  margin: 0 auto;
+  max-width: 70%;
+}
+
+/* mobile view */
+@media (max-width: 450px) {
+  #Gradeintext {
+    font-size: 2rem;
+  }
+
+  #benefits {
+    font-size: 0.7rem;
+  }
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.1);
+  }
+
+  /* Scale up to 110% */
+}
+
+
+
+#home-apply {
+  color: white;
+  margin: 1rem auto;
+  height: 3rem;
+  width: 7rem;
+  border-radius: 10px;
+  color: rgb(255, 238, 238);
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(to right, #092069, #00defb);
+  border: none;
+}
+
+#home-apply:hover {
+  /* Apply the animation to the link */
+  animation: scaleUp 0.5s ease forwards;
+}

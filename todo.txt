@@ -1,0 +1,19 @@
+add font cxolor ssame as navbar  in mobile nav
+add benefits and extras link in mobile nav
+
+
+
+Images
+https://www.aamc.org/news/10-things-you-didn-t-know-about-medical-residents
+https://agilityportal.io/blog/internal-communications-in-healthcare-7-best-practices 
+https://www.ziprecruiter.com/career/Part-Time-Medical-Sales-Representative/What-Is-How-to-Become
+https://wordart.com/
+https://quickbooks.intuit.com/r/payroll/what-is-a-401k/
+https://www.afscme.org/blog/caught-in-limbo-afscme-member-struggles-with-student-loan-forgiveness
+
+Other
+https://smtpjs.com/ 
+
+Change forward spelling
+Make animation for beinfets extras
+Make social pages work

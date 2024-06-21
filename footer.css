@@ -1,0 +1,71 @@
+/* this is line break to start footer */
+#footer-line-break {
+  max-width: 90%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* this is container for footer  */
+.footer-container {
+  margin: 0 auto;
+  max-width: 70%;
+  font-family: "Poppins";
+  display: flex;
+  align-items: start;
+}
+
+/* this is the links in the footer */
+.footer-links {
+  color: #6C757D;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  transition: transform 0.5s ease;
+}
+
+/* Define the scale-up animation */
+@keyframes scaleUp {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+/* Apply the animation to the link */
+.footer-links:hover {
+  animation: scaleUp 0.5s ease forwards;
+}
+
+.footer-desc {
+  margin-top: 0;
+  color: #6C757D;
+  max-width: 25%;
+}
+
+.footer-socials-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem auto;
+  max-width: 50%;
+}
+
+@keyframes scalesUp {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.3);
+  }
+}
+
+/* Apply the animation to the link */
+.social-item:hover {
+  animation: scalesUp 0.5s ease forwards;
+}
+
+.footer-socials-container img {
+  max-width: 2rem;
+}

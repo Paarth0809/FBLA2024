@@ -1,0 +1,176 @@
+@keyframes formslide {
+    from {
+        transform: translateX(-300px);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes formitemslide {
+    from {
+        transform: translateX(-150px);
+    }
+
+    to {
+        transform: translateX(0px);
+    }
+}
+
+.formslide{
+    animation: formslide 1s;
+}
+
+.container {
+    width: 50%;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 20px;
+    opacity: 85%;
+    transition: all 1s;
+}
+
+.container:hover{
+    width: 55%;
+    opacity: 100%;
+    
+}
+
+form {
+    text-align: left;
+    background: linear-gradient(to right, #092069, #00defb);
+    color: white;
+    padding: 20px;
+    border-radius: 20px;
+   
+}
+
+.form-item{
+    margin-bottom: .8rem;
+    border-radius: 5px;
+    animation: formitemslide 1s;
+    transition: all 0.5s;
+    font-family: "Poppins", sans-serif;
+    background-color: #b2bcc4;
+    border: 0px;
+    height: 2rem;
+    width: 100%;
+    
+    
+}
+
+.form-item:hover{
+    transform: translateY(-5px);
+
+}
+
+.form-item-container{
+    display: flex;
+    flex-direction: column;
+}
+
+#submit-button{
+    width: 200px;
+    height: 50px;
+    margin: 0 auto;
+    background: rgba(0, 93, 234, 0.914);
+    color: #ffffff;
+    border-color: white;
+    border-radius: 30px;
+    transition: all 0.5s;
+    border: none;
+    
+}
+
+#submit-button:hover{
+    
+    transform: translateY(-5px);
+}
+
+.textbox{
+    font-size: 20px;
+}
+
+textarea{
+    margin: 0 auto;
+}
+
+#job-application{
+    text-align: center;
+    color: white;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    animation: formitemslide 1s;
+    transition: all 0.5s;
+    font-family: "Poppins", sans-serif;
+}
+
+.subhead{
+    font-size: 25px;
+    text-align: left;
+}
+
+.sign-input {
+    font-family: Brush Script MT, Brush Script Std, cursive;
+    
+}
+
+#submit-button-container{
+display: flex;
+justify-content: center;
+
+}
+
+#q1{
+    width: 100%;
+    min-height: 4rem;
+}
+
+.four-square-form-item{
+    width: 48%;
+
+}
+
+.address-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+@media screen and (max-width: 768px) {
+    /* Adjustments for smaller screens */
+    .navbar {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .navbar a {
+      margin: 5px 0;
+    }
+    
+    .container {
+      width: 90%;
+    }
+    
+   
+    
+    #Gradeintext {
+      font-size: 4rem;
+    }
+    
+    #benefits {
+      font-size: 1rem;
+    }
+    
+    #Apply {
+      width: 100%;
+    }
+    .four-square-form-item{
+        width: 47%;
+    
+    }
+    
+   
+    
+  }
