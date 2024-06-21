@@ -1,13 +1,17 @@
 /* team image appearance */
 .team {
   display: block;
-  margin: 0 auto;
+  margin: 0 auto 1rem auto;
   border-radius: 20px;
   max-width: 70%;
+  transition: transform 0.5s ease;
+  /* transition for smooth scaling */
+  
 }
 
 .team:hover {
-  animation: scaleUpTeamImage 0.5s ease forwards;
+  transform: scale(1.05);
+  /* Scale up on hover */
 }
 
 @keyframes scaleUpTeamImage {
@@ -20,12 +24,33 @@
   }
 }
 
+.fade-elements {
+  visibility: hidden;
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+  animation-duration: 2s;
+  visibility: visible;
+}
+
 /* container for h1, text and button */
 #Persuade {
   flex-direction: column;
   display: flex;
   text-align: center;
+  margin-bottom: 2rem;
+}
 
+/* Fade in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 /* h1 color gradient */
@@ -36,6 +61,7 @@
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   margin: 0;
+
 }
 
 /* text appearance */
@@ -73,20 +99,57 @@
 
 
 
-#home-apply {
-  color: white;
-  margin: 1rem auto;
-  height: 3rem;
-  width: 7rem;
-  border-radius: 10px;
-  color: rgb(255, 238, 238);
-  font-size: 1rem;
-  font-family: "Poppins", sans-serif;
-  background: linear-gradient(to right, #092069, #00defb);
-  border: none;
+.statIcons {
+  max-width: 8%;
+  
 }
 
-#home-apply:hover {
-  /* Apply the animation to the link */
-  animation: scaleUp 0.5s ease forwards;
+
+
+/* Statistics css */
+.statisticsHeading{
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #6C757D;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
 }
+
+.statistics {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  text-align: left;
+  max-width: 90%; /* You might need to adjust this value */
+}
+.statDesc {
+  margin: 0;
+  font-size: 1.5em;
+  color: #6C757D;
+  font-family: "Poppins", sans-serif;
+  text-align: left
+}
+.leftStatistics {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+.rightStatistics {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.statistic {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #6C757D;
+  font-family: "Poppins", sans-serif;
+}
+
+.counter {
+  color: #68a3f6;
+  font-size: 150%;
+}
+

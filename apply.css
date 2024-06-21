@@ -1,3 +1,6 @@
+body {
+    font-family: "Poppins";
+}
 @keyframes formslide {
     from {
         transform: translateX(-300px);
@@ -8,15 +11,6 @@
     }
 }
 
-@keyframes formitemslide {
-    from {
-        transform: translateX(-150px);
-    }
-
-    to {
-        transform: translateX(0px);
-    }
-}
 
 .formslide{
     animation: formslide 1s;
@@ -27,38 +21,19 @@
     height: auto;
     margin: 0 auto;
     border-radius: 20px;
-    opacity: 85%;
-    transition: all 1s;
-}
-
-.container:hover{
-    width: 55%;
-    opacity: 100%;
     
 }
 
+
+
 form {
     text-align: left;
-    background: linear-gradient(to right, #092069, #00defb);
-    color: white;
     padding: 20px;
     border-radius: 20px;
    
 }
 
-.form-item{
-    margin-bottom: .8rem;
-    border-radius: 5px;
-    animation: formitemslide 1s;
-    transition: all 0.5s;
-    font-family: "Poppins", sans-serif;
-    background-color: #b2bcc4;
-    border: 0px;
-    height: 2rem;
-    width: 100%;
-    
-    
-}
+
 
 .form-item:hover{
     transform: translateY(-5px);
@@ -97,18 +72,19 @@ textarea{
 }
 
 #job-application{
+    font-size: 3rem;
     text-align: center;
-    color: white;
+    color: #68a3f6;
     margin: 0 auto;
     margin-bottom: 50px;
     animation: formitemslide 1s;
     transition: all 0.5s;
-    font-family: "Poppins", sans-serif;
 }
 
 .subhead{
     font-size: 25px;
     text-align: left;
+    color: #6C757D;
 }
 
 .sign-input {
@@ -135,6 +111,25 @@ justify-content: center;
 .address-container{
     display: flex;
     justify-content: space-between;
+}
+
+.form-item{
+    margin-bottom: .8rem;
+    border-radius: 5px;
+    animation: formitemslide 1s;
+    transition: all 0.5s;
+    font-family: "Poppins", sans-serif;
+    color: #6C757D;
+    border-style: solid;
+    border-color: #6C757D;
+    border-width: 1px;
+    height: 2rem;
+    width: 100%;
+}
+.applyDescription{
+font-size: 150%;
+color: #6C757D;
+text-align: center;
 }
 
 
@@ -170,7 +165,6 @@ justify-content: center;
         width: 47%;
     
     }
-    
-   
-    
   }
+
+  

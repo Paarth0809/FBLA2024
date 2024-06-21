@@ -1,0 +1,24 @@
+#scroll-left, #scroll-right {
+    /* Style your buttons here */
+    position: fixed; /* Add this line */
+    top: 2%; /* Adjust this value as needed to move the button up or down */
+}
+
+#scroll-left {
+    left: 0; /* This positions the button on the left side of the page */
+}
+
+#scroll-right {
+    right: 0; /* This positions the button on the right side of the page */
+}
+
+.scroll-container {
+    display: flex;
+    overflow-x: auto;
+}
+
+.item {
+    flex: 0 0 auto;
+    width: 200px; /* Or however wide you want each item to be */
+    margin: 10px; /* Optional: adds some space between items */
+}
