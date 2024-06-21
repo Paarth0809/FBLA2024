@@ -1,24 +1,94 @@
-#scroll-left, #scroll-right {
-    /* Style your buttons here */
-    position: fixed; /* Add this line */
-    top: 2%; /* Adjust this value as needed to move the button up or down */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
 }
 
-#scroll-left {
-    left: 0; /* This positions the button on the left side of the page */
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem 0;
+}
+.openingHeading {
+    color: #6C757D;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
 }
 
-#scroll-right {
-    right: 0; /* This positions the button on the right side of the page */
+.openingsContainer {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
 }
 
-.scroll-container {
+.job-search {
     display: flex;
-    overflow-x: auto;
+    gap: 1rem;
+    margin-bottom: 2rem;
 }
 
-.item {
-    flex: 0 0 auto;
-    width: 200px; /* Or however wide you want each item to be */
-    margin: 10px; /* Optional: adds some space between items */
+.job-search input, .job-search select {
+    padding: 0.5rem;
+    font-size: 1rem;
+    flex: 1;
 }
+
+.job-listings {
+    display: grid;
+    grid-template-columns: repeat(6, 300px); /* Fixed width for each column */
+    column-gap: 7rem;
+    row-gap: 2rem;
+    overflow-x: scroll; /* horizontal scroll */
+    padding-bottom: 1rem; /* bottom padding to prevent cutoff */
+    margin-bottom: 1rem; /*   bottom margin for spacing */
+
+}
+
+.job-card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Fixed width for each card */
+
+}
+
+@media screen and (max-width: 768px) {
+   
+    .job-listings {
+        grid-template-columns: repeat(2, 1fr); /* small screens - 2 collumns */
+    }
+}
+
+.job-card h3 {
+    margin-top: 0;
+}
+
+.cardItem {
+    margin: 0.5rem ;
+}
+
+.learn-more {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    color: white;
+    background-color: #007bff;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.apply-now {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    color: white;
+    background-color: #007bff;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.apply-now {
+    background-color:#007bff;
+}
+

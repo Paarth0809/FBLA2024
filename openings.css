@@ -1,124 +1,94 @@
-/* body default appearance */
 body {
+    font-family: 'Poppins', sans-serif;
     margin: 0;
-    background: #FFFFFF;
+    background-color: #f4f4f4;
 }
 
-/* container appearance */
-.container {
-    display: flex;
-    width: 100%;
-    margin: 0 auto;
-    justify-content: space-between;
-    font-family: "Poppins";
-    flex-direction: row; 
-    overflow-x: auto;
-}
-
-/* child appearance */
-.child {
-    margin-right: 1rem;
-    margin-left: 1rem;
-
-    border-radius: 20px;
-    text-align: justify;
-    width: 100%;
-
-}
-
-
-/* job title */
-.job-title {
-    text-align: center;
-    color: #68a3f6;
-}
-
-/* visal aid appearance */
-#manager-image {
-    width: 100%;
-    border-radius: 2rem;
-    transition: transform 0.5s ease; /* transition for smooth scaling */
-}
-
-
-  
-
-
-
-/* Apply the animation to the link */
-#manager-image:hover {
-    transform: scale(1.05); /* Scale up on hover */
-}
-
-@keyframes scaleUp {
-    0% {
-        transform: scale(1);
-    }
-
-    100% {
-        transform: scale(1.1);
-    }
-
-    /* Scale up to 110% */
-}
-
-/* button appearance */
-#Apply {
-    display: block;
+header {
+    background-color: #333;
     color: white;
-    margin: 1rem auto;
-    height: 3rem;
-    width: 7rem;
-    border-radius: 10px;
-    color: rgb(255, 238, 238);
-    font-size: 1rem;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #6C757D;
-    border: none;
-    margin: 0 auto;
+    padding: 1rem 0;
 }
-
-/* Apply the animation to the link */
-#Apply:hover {
-    animation: scaleUp 0.5s ease forwards;
-}
-
-/* description appearance */
-.job-description {
-    margin-right: 1rem;
-    margin-left: 1rem;
+.openingHeading {
     color: #6C757D;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
 }
 
-/* mobile view */
-@media (max-width: 1024px) {
-    .mobile-view {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-right: 2rem;
-        margin-left: 2rem;
-    }
+.openingsContainer {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
 
-    #manager-image {
-        width: 100%;
-    }
+.job-search {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
 
+.job-search input, .job-search select {
+    padding: 0.5rem;
+    font-size: 1rem;
+    flex: 1;
+}
 
-    .child {
-        margin: 0px 0px;
-
-    }
-
-    .container {
-        display: block;
-        margin: 0px 0px;
-        width: 100%;
-    }
-
-    body {
-        margin: 0px 0px;
-    }
-
+.job-listings {
+    display: grid;
+    grid-template-columns: repeat(6, 300px); /* Fixed width for each column */
+    column-gap: 7rem;
+    row-gap: 2rem;
+    overflow-x: scroll; /* horizontal scroll */
+    padding-bottom: 1rem; /* bottom padding to prevent cutoff */
+    margin-bottom: 1rem; /*   bottom margin for spacing */
 
 }
+
+.job-card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Fixed width for each card */
+
+}
+
+@media screen and (max-width: 768px) {
+   
+    .job-listings {
+        grid-template-columns: repeat(2, 1fr); /* small screens - 2 collumns */
+    }
+}
+
+.job-card h3 {
+    margin-top: 0;
+}
+
+.cardItem {
+    margin: 0.5rem ;
+}
+
+.learn-more {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    color: white;
+    background-color: #007bff;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.apply-now {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    color: white;
+    background-color: #007bff;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.apply-now {
+    background-color:#007bff;
+}
+
