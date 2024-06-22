@@ -41,18 +41,18 @@
         <a class="links" id="Contactmargin" href="signup.html">Sign Up</a>
     </div>
     <hr id="nav-bar-split" />
-    
+
     <h1>Login</h1>
     <form id="login-form">
-        <label for="login-username">Username:</label>
-        <input type="text" id="login-username" name="username" required>
+        <label for="loginEmail">Email:</label>
+        <input type="text" id="loginEmail" name="username" required>
         <br>
         <label for="login-password">Password:</label>
         <input type="password" id="login-password" name="password" required>
         <br>
         <button type="submit">Login</button>
         <h4>New here?</h4>
-        <a href="signup.html">Click here to create an account</a>
+        <a class="smallSignup" href="signup.html">Click here to create an account</a>
     </form>
 
     <div id="message"></div>
@@ -60,7 +60,7 @@
     <script>
         document.getElementById('login-form').addEventListener('submit', async (event) => {
             event.preventDefault();
-            const username = document.getElementById('login-username').value;
+            const username = document.getElementById('loginEmail').value;
             const password = document.getElementById('login-password').value;
 
             const response = await fetch('/login', {

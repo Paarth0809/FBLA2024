@@ -43,12 +43,16 @@ app.post('/signup', async (req, res) => {
 });
 
 app.post('/login', async (req, res) => {
-  const { signupEmail, password } = req.body;
+  console.log(req.body)
+  const { username, password } = req.body;
   const users = getUsers();
-  const user = users.find(user => user.signupEmail === signupEmail);
+  console.log(users);
+  const user = users.find(user => user.signupEmail.toLowerCase() === username.toLowerCase());
 
+  console.log("Password submitted by user:", password);
+  console.log("Passord hash stored in our database:", user.password)
   if (!user || !(await bcrypt.compare(password, user.password))) {
-    return res.status(400).send('Invalid signupEmail or password');
+    return res.status(400).send('Invalid email or password');
   }
 
   res.status(200).send('Login successful');
