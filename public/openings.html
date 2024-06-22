@@ -5,17 +5,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Openings</title>
-  <link rel="stylesheet" href="test.css" />
+  <link rel="stylesheet" href="openings.css" />
   <link rel="stylesheet" href="navbar.css" />
   <link rel="stylesheet" href="footer.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="navbar.js"></script>
+  <script src="openings.js"></script>
 </head>
 
 <body>
@@ -58,15 +60,28 @@
       <input type="text" id="search" placeholder="Search job openings...">
       <select id="location">
         <option value="all">All Locations</option>
-        <option value="location1">Location 1</option>
-        <option value="location2">Location 2</option>
-
+        <option value="Orlando, FL">Orlando, FL</option>
+        <option value="Raleigh, NC">Raleigh, NC</option>
+        <option value="New York, NY">New York, NY</option>
+        <option value="San Francisco, CA">San Francisco, CA</option>
+        <option value="San Diego, CA">San Diego, CA</option>
+        <option value="Austin, TX">Austin, TX</option>
+        <option value="Remote">Remote</option>
       </select>
       <select id="team">
-        <option value="all">All Teams</option>
-        <option value="team1">Team 1</option>
-        <option value="team2">Team 2</option>
-
+        <option value="all">All Departments</option>
+        <option value="Product Management">Product Management</option>
+        <option value="Sales">Sales</option>
+        <option value="Communications">Communications</option>
+        <option value="Supply Chain">Supply Chain</option>
+        <option value="Operations">Operations</option>
+        <option value="Information Technology">Information Technology</option>
+        <option value="Research & Development">Research & Development</option>
+        <option value="Human Resources">Human Resources</option>
+        <option value="Quality Control">Quality Control</option>
+        <option value="Clinical Research">Clinical Research</option>
+        <option value="Finance/Accounting">Finance/Accounting</option>
+        <option value="Marketing">Marketing</option>
       </select>
     </section>
 
@@ -92,63 +107,64 @@
       <div class="job-card">
         <h3>Supply Chain Manager</h3>
         <p class="cardItem">Location: Austin, TX</p>
-        <p class="cardItem">Department: Product Management</p>
+        <p class="cardItem">Department: Supply Chain</p>
         <a href="job7.html" class="learn-more">Learn more</a>
       </div>
       <div class="job-card">
         <h3>Inventory Control Manager</h3>
         <p class="cardItem">Location: New York, NY</p>
-        <p class="cardItem">Department: Sales</p>
+        <p class="cardItem">Department: Operations</p>
         <a href="job8.html" class="learn-more">Learn more</a>
       </div>
       <div class="job-card">
         <h3>Database Administrator</h3>
-        <p class="cardItem">Location: remote </p>
-        <p class="cardItem">Department: Communications</p>
+        <p class="cardItem">Location: remote</p>
+        <p class="cardItem">Department: Information Technology</p>
         <a href="job9.html" class="learn-more">Learn more</a>
       </div>
       <div class="job-card">
         <h3>Pharmaceutical Scientist</h3>
-        <p class="cardItem">Location: Raleigh, NC </p>
-        <p class="cardItem">Department: Product Management</p>
+        <p class="cardItem">Location: Raleigh, NC</p>
+        <p class="cardItem">Department: Research & Development</p>
         <a href="job4.html" class="learn-more">Learn more</a>
       </div>
       <div class="job-card">
-        <h3>Human Recources Manager</h3>
+        <h3>Human Resources Manager</h3>
         <p class="cardItem">Location: San Francisco, CA</p>
-        <p  class="cardItem">Department: Communications</p>
+        <p class="cardItem">Department: Human Resources</p>
         <a href="job5.html" class="learn-more">Learn more</a>
       </div>
       <div class="job-card">
         <h3>Quality Assurance Manager</h3>
         <p class="cardItem">Location: New York, NY</p>
-        <p class="cardItem">Department: Sales</p>
+        <p class="cardItem">Department: Quality Control</p>
         <a href="job6.html" class="learn-more">Learn more</a>
       </div>
       <div class="job-card">
         <h3>Clinical Data Manager</h3>
         <p class="cardItem">Location: Remote</p>
-        <p class="cardItem">Department: Product Management</p>
+        <p class="cardItem">Department: Clinical Research</p>
         <a href="job10.html" class="learn-more">Learn more</a>
       </div>
       <div class="job-card">
         <h3>Accountant</h3>
         <p class="cardItem">Location: Remote</p>
-        <p class="cardItem">Department: Sales</p>
+        <p class="cardItem">Department: Finance/Accounting</p>
         <a href="job11.html" class="learn-more">Learn more</a>
       </div>
       <div class="job-card">
         <h3>Brand Manager</h3>
         <p class="cardItem">Location: San Diego, CA</p>
-        <p class="cardItem">Department: Communications</p>
+        <p class="cardItem">Department: Marketing</p>
         <a href="job12.html" class="learn-more">Learn more</a>
       </div>
-      
-
+    </div>
+    <div id="no-results">
+      <p>No job openings match your search criteria.</p>
     </div>
   </div>
 
-  
+  </div>
 
   <!-- Our footer -->
   <footer>
@@ -181,10 +197,50 @@
       </div>
     </div>
   </footer>
-  <script src="openings.js"></script>
-</body>
 
-</html>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const searchInput = document.getElementById('search');
+      const locationSelect = document.getElementById('location');
+      const teamSelect = document.getElementById('team');
+      const jobCards = document.querySelectorAll('.job-card');
+      const noResults = document.getElementById('no-results');
+
+      function filterJobs() {
+        const searchValue = searchInput.value.toLowerCase();
+        const locationValue = locationSelect.value.toLowerCase();
+        const teamValue = teamSelect.value.toLowerCase();
+
+        let matchesFound = false;
+
+        jobCards.forEach(card => {
+          const title = card.querySelector('h3').textContent.toLowerCase();
+          const location = card.querySelector('.cardItem:nth-child(2)').textContent.toLowerCase();
+          const team = card.querySelector('.cardItem:nth-child(3)').textContent.toLowerCase();
+
+          const matchesSearch = title.includes(searchValue);
+          const matchesLocation = locationValue === 'all' || location.includes(locationValue);
+          const matchesTeam = teamValue === 'all' || team.includes(teamValue);
+
+          if (matchesSearch && matchesLocation && matchesTeam) {
+            card.style.display = '';
+            matchesFound = true;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        noResults.style.display = matchesFound ? 'none' : 'block';
+      }
+
+      searchInput.addEventListener('input', filterJobs);
+      locationSelect.addEventListener('change', filterJobs);
+      teamSelect.addEventListener('change', filterJobs);
+    });
+
+  </script>
+
+
 
 </body>
 

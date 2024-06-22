@@ -53,6 +53,16 @@ header {
 
 }
 
+
+
+#no-results{
+    text-align: center;
+    color: #007bff;
+    font-size: 1.5rem;
+    display: none;
+    }
+
+
 @media screen and (max-width: 768px) {
    
     .job-listings {
