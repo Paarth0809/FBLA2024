@@ -32,6 +32,7 @@ body {
     border: 1px solid #ddd;
     border-radius: 5px;
   }
+
   #signup-password {
     width: 100%;
     padding: 10px;
@@ -40,22 +41,6 @@ body {
     border-radius: 5px;
   }
 
-  #login-username {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
-
-  #login-password {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
-  
   button {
     width: 100%;
     padding: 10px;

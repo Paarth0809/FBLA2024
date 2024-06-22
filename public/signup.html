@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Signup and Login</title>
+  <link rel="stylesheet" type="text/css" href="signup.css" />
+  <link rel="stylesheet" href="navbar.css" />
+  <link rel="stylesheet" href="footer.css" />
+</head>
+
+<body>
+  <!-- mobile version of the navbar -->
+  <div class="topnav">
+    <a href="index.html">
+      <img src="images/transparent.png" id="logo"></img>
+    </a>
+    <!-- Navigation links (hidden by default) -->
+    <div id="myLinks">
+      <a class="linkcolor" href="index.html">Home</a>
+      <a class="linkcolor" href="openings.html">Job Openings</a>
+      <a class="linkcolor" href="vaccines.html">Vaccines appointments</a>
+      <a class="linkcolor" href="apply.html">Apply</a>
+    </div>
+    <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <!-- desktop version of the navigation bar -->
+  <div class="navbar">
+    <a href="index.html">
+      <img src="images/Logo.png" id="logo" alt="Logo"></img>
+    </a>
+    <a class="links" href="index.html">Home</a>
+    <a class="links" href="openings.html">Job Openings</a>
+    <a class="links" href="benefits.html">Vaccine Appointments</a>
+    <a class="links" href="apply.html">Apply</a>
+    <a class="links" href="login.html">Log In</a>
+    <a class="links" id="Contactmargin" href="signup.html">Sign Up</a>
+  </div>
+  <hr id="nav-bar-split" />
+
+  <h1>Signup</h1>
+  <form id="signup-form">
+    <label for="signup-username">Username:</label>
+    <input type="text" id="signup-username" name="username" required>
+    <br>
+    <label for="signup-password">Password:</label>
+    <input type="password" id="signup-password" name="password" required>
+    <br>
+    <button type="submit">Sign Up</button>
+    <h4>Already have an account?</h4>
+    <a href="login.html">Click here to log in</a>
+  </form>
+
+  <div id="message"></div>
+
+  <script>
+    document.getElementById('signup-form').addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const username = document.getElementById('signup-username').value;
+      const password = document.getElementById('signup-password').value;
+
+      const response = await fetch('/signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ username, password })
+      });
+
+      const message = await response.text();
+      document.getElementById('message').innerText = message;
+    });
+  </script>
+</body>
+
+</html>
