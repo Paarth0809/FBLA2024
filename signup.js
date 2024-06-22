@@ -26,28 +26,29 @@ const saveUsers = (users) => {
 };
 
 app.post('/signup', async (req, res) => {
-  const { username, password } = req.body;
+  console.log(req.body);
+  const { signupEmail, password, fullName, age, phoneNumber } = req.body;
   const users = getUsers();
-  const userExists = users.find(user => user.username === username);
+  const userExists = users.find(user => user.signupEmail === signupEmail);
 
   if (userExists) {
     return res.status(400).send('User already exists');
   }
 
   const hashedPassword = await bcrypt.hash(password, 10);
-  users.push({ username, password: hashedPassword });
+  users.push({ signupEmail, password: hashedPassword, fullName, age, phoneNumber });
   saveUsers(users);
 
   res.status(201).send('User created');
 });
 
 app.post('/login', async (req, res) => {
-  const { username, password } = req.body;
+  const { signupEmail, password } = req.body;
   const users = getUsers();
-  const user = users.find(user => user.username === username);
+  const user = users.find(user => user.signupEmail === signupEmail);
 
   if (!user || !(await bcrypt.compare(password, user.password))) {
-    return res.status(400).send('Invalid username or password');
+    return res.status(400).send('Invalid signupEmail or password');
   }
 
   res.status(200).send('Login successful');

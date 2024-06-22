@@ -43,11 +43,20 @@
 
   <h1>Signup</h1>
   <form id="signup-form">
-    <label for="signup-username">Username:</label>
-    <input type="text" id="signup-username" name="username" required>
+    <label for="fullName">Full Name:</label>
+    <input type="text" id="fullName" name="fullName" required>
     <br>
-    <label for="signup-password">Password:</label>
-    <input type="password" id="signup-password" name="password" required>
+    <label for="signupEmail">Email:</label>
+    <input type="email" id="signupEmail" name="signupEmail" required>
+    <br>
+    <label for="phoneNumber">Phone Number:</label>
+    <input type="text" id="phoneNumber" name="phoneNumber" required>
+    <br>
+    <label for="age">Age:</label>
+    <input type="text" id="age" name="age" required>
+    <br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
     <br>
     <button type="submit">Sign Up</button>
     <h4>Already have an account?</h4>
@@ -55,25 +64,57 @@
   </form>
 
   <div id="message"></div>
-
+<!-- Email JavaScript library -->
+<script src="https://smtpjs.com/v3/smtp.js"></script>
   <script>
+// send email to user saying that account was succsesfully created
+function sendEmail() {
+    // Use the Email object's send function (defined in SMTPJS library).
+    // SecureToken is obtained from smtpjs.com website which allows one to
+    // encrypt the credentials required to send email using a SMTP server. 
+    // Here we are using smtp.elasticemail.com as our SMTP server (see elasticemail.com)
+    Email.send({
+        SecureToken: "13956b45-d222-49d9-bb43-e6bb24c735bc ",
+        To: document.getElementById('signupEmail').value,
+        From: 'futuramedicalinc@gmail.com',
+        Subject: "Account successfully created ",
+        Body: "Full Name: " + document.getElementById("fullName").value +
+            "<br>Email: " + document.getElementById("signupEmail").value +
+            "<br>Phone: " + document.getElementById("phoneNumber").value +
+            "<br>Age: " + document.getElementById("age").value })
+
+            
+    }
+
     document.getElementById('signup-form').addEventListener('submit', async (event) => {
       event.preventDefault();
-      const username = document.getElementById('signup-username').value;
-      const password = document.getElementById('signup-password').value;
+      const signupEmail = document.getElementById('signupEmail').value;
+      const password = document.getElementById('password').value;
+      const fullName =  document.getElementById("fullName").value;
+      const phoneNumber =  document.getElementById("phoneNumber").value;
+      const age =  document.getElementById("age").value;
 
       const response = await fetch('/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ username, password })
+        body: JSON.stringify({ signupEmail, password, fullName, phoneNumber, age })
       });
 
       const message = await response.text();
+      sendEmail();
       document.getElementById('message').innerText = message;
     });
+
+
+
+
+    
+    
   </script>
+
+
 </body>
 
 </html>

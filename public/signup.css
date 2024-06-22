@@ -25,7 +25,7 @@ body {
     margin-bottom: 10px;
   }
   
-  #signup-username {
+  #signupEmail {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
@@ -33,7 +33,7 @@ body {
     border-radius: 5px;
   }
 
-  #signup-password {
+  #password {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
