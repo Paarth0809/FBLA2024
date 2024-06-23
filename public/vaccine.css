@@ -1,0 +1,128 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 340px;
+    text-align: center;
+}
+
+#vaccineContainer{
+    display: none;
+}
+
+#loginFirst{
+    display: none;
+}
+
+
+h1 {
+    color: #0073e6;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.option-buttons,
+.question,
+.calendar,
+.contact-details,
+.thank-you-message {
+    margin-top: 20px;
+}
+
+button {
+    background-color: #0073e6;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    cursor: pointer;
+    margin: 10px 0;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #005bb5;
+    transform: scale(1.05);
+}
+
+input[type="number"],
+input[type="date"],
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.hidden {
+    display: none;
+}
+
+.thank-you-message p {
+    font-size: 18px;
+    color: #0073e6;
+    margin: 10px 0;
+}
+
+.thank-you-message p.note {
+    font-size: 16px;
+    color: #333;
+}
+
+/* Enhancing Calendar Section */
+
+#calendar {
+    margin-top: 30px;
+}
+
+#datePicker,
+#timePicker {
+    width: 50%;
+}
+
+#timeSelection {
+    margin-top: 20px;
+}
+
+#calendarNextButton {
+    margin-top: 20px;
+}
+
+.calendar p {
+    font-size: 18px;
+    color: #0073e6;
+    margin-bottom: 10px;
+}
+
+/* Centering and Stacking Next Button for Age Questions */
+
+.question {
+    text-align: left;
+    /* Align text to the left */
+}
+
+.question button {
+    display: block;
+    /* Display button as block element */
+    margin: 10px auto 0;
+    /* Center button horizontally and add top margin */
+}

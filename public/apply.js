@@ -37,7 +37,7 @@ function sendEmail(fileName, base64data) {
     // encrypt the credentials required to send email using a SMTP server. 
     // Here we are using smtp.elasticemail.com as our SMTP server (see elasticemail.com)
     Email.send({
-        SecureToken: "13956b45-d222-49d9-bb43-e6bb24c735bc ",
+        SecureToken: "13956b45-d222-49d9-bb43-e6bb24c735bc",
         To: 'futuramedicalinc@gmail.com',
         From: 'futuramedicalinc@gmail.com',
         Subject: "Job Application from " + document.getElementById("name").value,

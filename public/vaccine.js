@@ -1,66 +1,360 @@
-// this is the function definition that when called will base64 encode the PDF file that
-// is uploaded by the user
-var reactToSubmitFormFunction = function (event) {
+let selectedVaccine = ''; // These create empty variables that can be used later in the code
+let ageLimit = 0;
+let schedulingOption = '';
+let bookedSlots = JSON.parse(localStorage.getItem('bookedSlots')) || {}; // Allows JSON to parse through local storage which is storage that stays even after
+//the website becomes reloaded or closed allowing for booked slots to be greyed out
 
-    event.preventDefault(); // Prevent the form from submitting normally
+document.addEventListener('DOMContentLoaded', async () => {
+    const response = await fetch('/session-status');
+    const status = await response.json();
 
-    // get the file that user wants to upload from the 'resume' input field 
-    var file = document.getElementById('resume').files[0];
-    if (!file) {
-        alert('Please select a file!');
+    if (status.isLoggedIn) {
+        document.getElementById('loginFirst').style.display = 'none';
+        document.getElementById('vaccineContainer').style.display = 'block';
+        loadBookedSlots();
+    }
+    else {
+        document.getElementById('loginFirst').style.display = 'block';
+        document.getElementById('vaccineContainer').style.display = 'none';
+    }
+});
+
+function loadBookedSlots() {
+    updateTimePicker();
+    updateDisabledDates();
+}
+
+function selectOption(option) {
+    schedulingOption = option;
+    document.querySelector('.option-buttons').classList.add('hidden');
+    document.getElementById('vaccineSelection').classList.remove('hidden');
+}
+
+function handleVaccineSelection() {
+    selectedVaccine = document.getElementById('vaccineType').value;
+
+    switch (selectedVaccine) {
+        case 'covid19':
+        case 'flu':
+            ageLimit = 0.5; // Age limit is 6 months (0.5 years)
+            break;
+        case 'tetanus':
+            ageLimit = 7; // Age limit is 7 years
+            break;
+        case 'mumps':
+        case 'measles':
+            ageLimit = 1; // Age limit is 1 year
+            break;
+        default:
+            ageLimit = 0;
+            break;
+    }
+}
+
+function proceedToNextStep() {
+    if (!selectedVaccine) {
+        alert('Please select a valid vaccine type.');
         return;
     }
 
-    var reader = new FileReader();
-    // define the function that will get called when the FileReader finishes loading/reading
-    // the file - note that this function does not execute right away (it executes only 
-    // after the loading/reading of the user's PDF resume)
-    reader.onloadend = function () {
-        // the result of loading/reading the user's PDF resume is base64 encoded string
-        var base64data = reader.result;
-        // use the file name and base64 data  to send email
-        sendEmail(file.name, base64data);
+    if (schedulingOption === 'individual') {
+        document.getElementById('vaccineSelection').classList.add('hidden');
+
+        if (selectedVaccine === 'covid19' || selectedVaccine === 'flu') {
+            document.getElementById('ageQuestionCovidFlu').classList.remove('hidden');
+        } else if (selectedVaccine === 'tetanus') {
+            document.getElementById('ageQuestionTetanus').classList.remove('hidden');
+        } else if (selectedVaccine === 'mumps' || selectedVaccine === 'measles') {
+            document.getElementById('ageQuestionMumps').classList.remove('hidden');
+        }
+    } else if (schedulingOption === 'group') {
+        document.getElementById('vaccineSelection').classList.add('hidden');
+        document.getElementById('groupQuestion').classList.remove('hidden');
+    }
+}
+
+function handleAgeConfirmationCovidFlu() {
+    const underAgeInput = document.querySelector('input[name="underAgeCovidFlu"]:checked');
+
+    if (!underAgeInput) {
+        alert('Please select whether the vaccine recipient is under 6 months of age.');
+        return;
     }
 
-    // start loading/reading the user's PDF resume file - when this finishes then the above
-    // defined reader.onloaded function gets called
-    reader.readAsDataURL(file);
-};
+    if (underAgeInput.value === 'yes') {
+        alert('The vaccine cannot be administered due to age restrictions.');
+        return;
+    }
 
-document.getElementById('job-application-form').addEventListener('submit', reactToSubmitFormFunction);
+    // Proceed with other logic if age condition is satisfied
+    document.getElementById('ageQuestionCovidFlu').classList.add('hidden');
+    document.getElementById('calendar').classList.remove('hidden');
+}
 
-// send email with the user's details and PDF resume
-// takes the file name and base64 encoded data as parameters
-function sendEmail(fileName, base64data) {
-    // Use the Email object's send function (defined in SMTPJS library).
-    // SecureToken is obtained from smtpjs.com website which allows one to
-    // encrypt the credentials required to send email using a SMTP server. 
-    // Here we are using smtp.elasticemail.com as our SMTP server (see elasticemail.com)
-    Email.send({
-        SecureToken: "13956b45-d222-49d9-bb43-e6bb24c735bc ",
-        To: 'futuramedicalinc@gmail.com',
-        From: 'futuramedicalinc@gmail.com',
-        Subject: "Job Application from " + document.getElementById("name").value,
-        Body: "Name: " + document.getElementById("name").value +
-            "<br>Email: " + document.getElementById("email").value +
-            "<br>Phone: " + document.getElementById("phone").value +
-            "<br>Signature: " + document.getElementById("signature").value +
-            "<br>Date Of Birth: " + document.getElementById("DOB").value +
-            "<br>Address: " + document.getElementById("address").value +
-            "<br>City: " + document.getElementById("city").value +
-            "<br>State: " + document.getElementById("state").value +
-            "<br>Zip: " + document.getElementById("zip").value +
-            "<br>Job Name: " + document.getElementById("jobs").value +
-            "<br>Education Level: " + document.getElementById("edu-level").value +
-            "<br>Job Start Date: " + document.getElementById("job-start-date").value +
-            "<br>Reason to Work: " + document.getElementById("q1").value,
-        Attachments: [
-            {
-                 name: fileName,
-                data: base64data
-            }]
+function handleAgeConfirmationTetanus() {
+    const underAgeInput = document.querySelector('input[name="underAgeTetanus"]:checked');
 
+    if (!underAgeInput) {
+        alert('Please select whether the vaccine recipient is under 7 years of age.');
+        return;
+    }
+
+    if (underAgeInput.value === 'yes') {
+        alert('This vaccine cannot be administered due to age restrictions.');
+        return;
+    }
+    document.getElementById('ageQuestionTetanus').classList.add('hidden');
+    document.getElementById('calendar').classList.remove('hidden');
+}
+
+function handleAgeConfirmationMumps() {
+    const underAgeInput = document.querySelector('input[name="underAgeMumps"]:checked');
+
+    if (!underAgeInput) {
+        alert('Please select whether the vaccine recipient is under 1 year of age.');
+        return;
+    }
+
+    if (underAgeInput.value === 'yes') {
+        alert('This vaccine cannot be administered due to age restrictions.');
+        return;
+    }
+
+    document.getElementById('ageQuestionMumps').classList.add('hidden');
+    document.getElementById('calendar').classList.remove('hidden');
+}
+
+function handleAgeConfirmationMeasles() {
+    const underAgeInput = document.querySelector('input[name="underAgeMeasles"]:checked');
+
+    if (!underAgeInput) {
+        alert('Please select whether the vaccine recipient is under 1 year of age.');
+        return;
+    }
+
+    if (underAgeInput.value === 'yes') {
+        alert('This vaccine cannot be administered due to age restrictions.');
+        return;
+    }
+
+    document.getElementById('ageQuestionMeasles').classList.add('hidden');
+    document.getElementById('calendar').classList.remove('hidden');
+}
+
+function showGroupAgeQuestion() {
+    const groupSize = document.getElementById('groupSizeInput').value;
+    if (!groupSize || groupSize < 1) {
+        alert('Please enter a valid group size.');
+        return;
+    }
+
+    document.getElementById('groupQuestion').classList.add('hidden');
+
+    if (selectedVaccine === 'covid19' || selectedVaccine === 'flu') {
+        document.getElementById('groupAgeQuestionCovidFlu').classList.remove('hidden');
+    } else if (selectedVaccine === 'tetanus') {
+        document.getElementById('groupAgeQuestionTetanus').classList.remove('hidden');
+    } else if (selectedVaccine === 'mumps' || selectedVaccine === 'measles') {
+        document.getElementById('groupAgeQuestionMumps').classList.remove('hidden');
+    }
+}
+
+function handleGroupAgeConfirmationCovidFlu() {
+    const underAgeInput = document.querySelector('input[name="underAgeGroupCovidFlu"]:checked');
+
+    if (!underAgeInput) {
+        alert('Please select whether there are individuals under the specified age in your group.');
+        return;
+    }
+
+    if (underAgeInput.value === 'yes') {
+        alert('This vaccine cannot be administered due to age restrictions.');
+        return;
+    }
+
+    document.getElementById('groupAgeQuestionCovidFlu').classList.add('hidden');
+    document.getElementById('calendar').classList.remove('hidden');
+    document.getElementById('timeSelection').classList.remove('hidden'); // Show time selection after age confirmation
+}
+
+function handleGroupAgeConfirmationTetanus() {
+    const underAgeInput = document.querySelector('input[name="underAgeGroupTetanus"]:checked');
+
+    if (!underAgeInput) {
+        alert('Please select whether there are individuals under the specified age in your group.');
+        return;
+    }
+
+    if (underAgeInput.value === 'yes') {
+        alert('This vaccine cannot be administered due to age restrictions.');
+        return;
+    }
+
+    document.getElementById('groupAgeQuestionTetanus').classList.add('hidden');
+    document.getElementById('calendar').classList.remove('hidden');
+    document.getElementById('timeSelection').classList.remove('hidden'); // Show time selection after age confirmation
+}
+
+function handleGroupAgeConfirmationMumps() {
+    const underAgeInput = document.querySelector('input[name="underAgeGroupMumps"]:checked');
+
+    if (!underAgeInput) {
+        alert('Please select whether there are individuals under the specified age in your group.');
+        return;
+    }
+
+    if (underAgeInput.value === 'yes') {
+        alert('This vaccine cannot be administered due to age restrictions.');
+        return;
+    }
+
+    document.getElementById('groupAgeQuestionMumps').classList.add('hidden');
+    document.getElementById('calendar').classList.remove('hidden');
+    document.getElementById('timeSelection').classList.remove('hidden'); // Show time selection after age confirmation
+}
+
+function handleGroupAgeConfirmationMeasles() {
+    const underAgeInput = document.querySelector('input[name="underAgeGroupMeasles"]:checked');
+
+    if (!underAgeInput) {
+        alert('Please select whether there are individuals under the specified age in your group.');
+        return;
+    }
+
+    if (underAgeInput.value === 'yes') {
+        alert('This vaccine cannot be administered due to age restrictions.');
+        return;
+    }
+
+    document.getElementById('groupAgeQuestionMeasles').classList.add('hidden');
+    document.getElementById('calendar').classList.remove('hidden');
+    document.getElementById('timeSelection').classList.remove('hidden'); // Show time selection after age confirmation
+}
+
+// Function to validate selected date
+function validateDate() {
+    const selectedDate = document.getElementById('datePicker').value;
+    const currentDate = new Date();
+    const selectedDateTime = new Date(selectedDate);
+
+    if (selectedDateTime < currentDate) {
+        alert('Please select a future date.');
+        document.getElementById('datePicker').value = '';
+    } else {
+        updateTimePicker();
+    }
+}
+
+// Function to update time picker based on selected date
+function updateTimePicker() {
+    const selectedDate = document.getElementById('datePicker').value;
+    const fullyBookedTimes = bookedSlots[selectedDate] || [];
+
+    const timePicker = document.getElementById('timePicker');
+    timePicker.innerHTML = ''; // Clear previous options
+
+    const availableTimes = [
+        '11:00 AM', '1:00 PM', '3:00 PM', '5:00 PM', '6:00 PM',
+        '6:30 PM', '7:30 PM', '8:00 PM', '9:00 PM', '9:30 PM'
+    ];
+
+    availableTimes.forEach(time => {
+        if (!fullyBookedTimes.includes(time)) {
+            const option = document.createElement('option');
+            option.value = time;
+            option.textContent = time;
+            timePicker.appendChild(option);
+        }
     });
 
-    alert("Your job application was submitted successfully! We will get back with you shortly!");
+    // Show the time selection and next button
+    document.getElementById('timeSelection').classList.remove('hidden');
+    document.getElementById('calendarNextButton').classList.remove('hidden');
+}
+
+// Function to proceed to contact details after selecting date and time
+function showContactDetails() {
+    const selectedDate = document.getElementById('datePicker').value;
+    const selectedTime = document.getElementById('timePicker').value;
+
+    if (!selectedDate || !selectedTime) {
+        alert('Please select both date and time.');
+        return;
+    }
+
+    document.getElementById('calendar').classList.add('hidden');
+    document.getElementById('contactDetails').classList.remove('hidden');
+}
+
+function submitForm() {
+    // Fetch values from input fields
+    const name = document.getElementById('nameInput').value;
+    const email = document.getElementById('emailInput').value;
+    const phone = document.getElementById('phoneInput').value;
+    const date = document.getElementById('datePicker').value;
+    const time = document.getElementById('timePicker').value;
+    const groupSize = document.getElementById('groupSizeInput').value;
+
+    // Determine the number of patients based on selection
+    let numPatients;
+    const individualOption = document.getElementById('individualOption');
+    if (individualOption.checked) {
+        numPatients = 1; // For individual
+    } else {
+        numPatients = groupSize || 0; // For group, use the groupSize or default to 0
+    }
+
+    if (name && email && phone && date && time && selectedVaccine) {
+        // Prepare the email content
+        const emailContent = `
+            Dear ${name},<br><br>
+            Thank you for registering for a vaccine with Futura!<br><br>
+            You have successfully booked a vaccine appointment.<br>
+            <strong>Details:</strong><br>
+            - Vaccine: ${selectedVaccine}<br>
+            - Date: ${date}<br>
+            - Time: ${time}<br>
+            - Number of Patients: ${groupSize}<br><br>
+            Please feel free to contact us if you have any further questions.<br><br>
+            Best regards,<br>
+            The Futura Team
+        `;
+
+        // Sending the email using SMTPJS and Elastic Email's SMTP server
+        Email.send({
+            SecureToken: "13956b45-d222-49d9-bb43-e6bb24c735bc",
+            To: email,
+            From: "futuramedicalinc@gmail.com",
+            Subject: "Vaccine Scheduling Confirmation",
+            Body: emailContent
+        }).then(
+            message => {
+                if (message === "OK") {
+                    // Hide contact details and show thank you message on successful email send
+                    document.getElementById('contactDetails').classList.add('hidden');
+                    document.getElementById('thankYouMessage').classList.remove('hidden');
+                    // Display confirmation message to the user
+                    document.getElementById('thankYouMessageContent').innerHTML = `
+                        Dear ${name},<br><br>
+                        Thank you for registering for a vaccine with Futura!<br><br>
+                        You have successfully booked a vaccine appointment.<br>
+                        <strong>Details:</strong><br>
+                        - Vaccine: ${selectedVaccine}<br>
+                        - Date: ${date}<br>
+                        - Time: ${time}<br>
+                        - Number of Patients: ${numPatients}<br><br>
+                        Please feel free to contact us if you have any further questions.<br><br>
+                        Best regards,<br>
+                        The Futura Team
+                    `;
+                } else {
+                    // Alert user if email sending fails
+                    alert("Failed to send the email: " + message);
+                }
+            }
+        );
+    } else {
+        // Alert user if any field is empty
+        alert("Please fill out all the fields.");
+    }
 }
