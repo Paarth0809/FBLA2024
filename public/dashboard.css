@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    font-family: "Poppins";
+    background-color: white;
+    color: #6C757D;
+}
+
+
+
+
+
+
+#nav-bar-split {
+    margin: 0;
+    border: none;
+    border-top: 1px solid #007bff;
+}
+
+.dashboard-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #007bff;
+}
+
+.card {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.card h2 {
+    color: #007bff;
+}
+
+.card p {
+    color: #6C757D;
+}

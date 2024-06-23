@@ -102,3 +102,37 @@ header {
     background-color:#007bff;
 }
 
+
+
+/* Add this CSS to your existing file */
+.scroll-container {
+    display: flex;
+    align-items: center;
+    
+    /* margin: ; */
+  }
+  
+  
+  
+  .scroll-arrow {
+    background-color: #fff;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+    font-size: 5rem;
+    padding: 0.5rem;
+    position: absolute;
+    top: 77%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+  
+  .left-arrow {
+    left: 0;
+  }
+  
+  .right-arrow {
+    right: 0;
+  }
+  
+

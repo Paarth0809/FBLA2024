@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+    <!-- mobile version of the navbar -->
+  <div class="topnav">
+    <a href="index.html">
+      <img src="images/transparent.png" id="logo"></img>
+    </a>
+    <!-- Navigation links (hidden by default) -->
+    <div id="myLinks">
+      <a class="linkcolor" href="index.html">Home</a>
+      <a class="linkcolor" href="openings.html">Job Openings</a>
+      <a class="linkcolor" href="vaccines.html">Vaccines appointments</a>
+      <a class="linkcolor" href="apply.html">Apply</a>
+    </div>
+    <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <!-- desktop version of the navigation bar -->
+  <div class="navbar">
+    <a href="index.html">
+      <img src="images/Logo.png" id="logo" alt="Logo"></img>
+    </a>
+    <a class="links" href="index.html">Home</a>
+    <a class="links" href="openings.html">Job Openings</a>
+    <a class="links" href="benefits.html">Vaccine Appointments</a>
+    <a class="links" href="apply.html">Apply</a>
+    <a class="links" href="login.html">Log In</a>
+    <a class="links" id="Contactmargin" href="signup.html">Sign Up</a>
+    
+    
+  </div>
+
+  <hr id="nav-bar-split" />
+    <!-- Dashboard Content -->
+    <div class="dashboard-container">
+        <h1>Welcome to Your Dashboard</h1>
+        <div class="card">
+            <h2>Booked Appointments</h2>
+            <p>You currently have no booked appointments.</p>
+        </div>
+        <div class="card">
+            <h2>Upcoming Features</h2>
+            <p>Stay tuned for more updates!</p>
+        </div>
+    </div>
+
+    <!-- Our footer -->
+  <footer>
+    <hr id="footer-line-break">
+    <div class="footer-container">
+      <p class="footer-desc">Futura is a medical company that is hard at work striving to make the world a better place.
+        Go check out our socials!</p>
+      <div class="footer-sub-container">
+        <div class="footer-links-container">
+          <a class="footer-links" href="faqs.html">FAQ's</a>
+          <span>|</span>
+          <a class="footer-links" href="citations.html">Citations</a>
+          <span>|</span>
+          <a class="footer-links" href="">Legal & Trademarks</a>
+          <span>|</span>
+          <a class="footer-links" href="">Terms of Service</a>
+          <span class="footer-desc">|© 2024 Futura, Inc, All Rights Reserved.</span>
+        </div>
+        <!-- Futura's socials -->
+        <div class="footer-socials-container">
+          <a class="social-item" href=""><img src="images/youtube.png" alt=""></a>
+          <a class="social-item" href="https://www.instagram.com/futura_medical"><img src="images/instagram.png"
+              alt=""></a>
+          <a class="social-item" href="https://www.tiktok.com/@futura.medical"><img src="images/tiktok.png" alt=""></a>
+          <a class="social-item" href="https://twitter.com/FuturaMedical_"><img src="images/twitter.png" alt=""></a>
+          <a class="social-item" href=""><img src="images/facebook.png" alt=""></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
