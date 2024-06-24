@@ -85,35 +85,6 @@ app.get('/logout', (req, res) => {
   });
 });
 
-// Add review functionality
-const reviewsFile = 'reviews.json';
-
-const getReviews = () => {
-  if (!fs.existsSync(reviewsFile)) {
-    fs.writeFileSync(reviewsFile, JSON.stringify([]));
-  }
-  const data = fs.readFileSync(reviewsFile);
-  return JSON.parse(data);
-};
-
-const saveReviews = (reviews) => {
-  fs.writeFileSync(reviewsFile, JSON.stringify(reviews));
-};
-
-app.post('/api/reviews', (req, res) => {
-  const { name, rating, review } = req.body;
-  const reviews = getReviews();
-  const newReview = { name, rating, review, date: new Date().toISOString().split('T')[0] };
-  reviews.push(newReview);
-  saveReviews(reviews);
-  res.status(201).json(newReview);
-});
-
-app.get('/api/reviews', (req, res) => {
-  const reviews = getReviews();
-  res.json(reviews);
-});
-
 // Serve the main HTML file
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));

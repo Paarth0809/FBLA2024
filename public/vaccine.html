@@ -12,166 +12,168 @@
 <body>
     <div id="loginFirst">Please login in first</div>
     <div id="vaccineContainer" class="container">
-        <h1>Vaccine Scheduling</h1>
-        <div class="option-buttons">
-            <button onclick="selectOption('individual')">For Yourself</button>
-            <button onclick="selectOption('group')">For a Group</button>
-        </div>
-        
-        <!-- Vaccine Selection Section -->
-        <div class="question hidden" id="vaccineSelection">
-            <p>Which vaccine are you scheduling for?</p>
-            <select id="vaccineType" onchange="handleVaccineSelection()">
-                <option value="">Select a vaccine...</option>
-                <option value="covid19">COVID-19</option>
-                <option value="flu">Flu</option>
-                <option value="tetanus">Tetanus</option>
-                <option value="mumps">Mumps</option>
-                <option value="measles">Measles</option>
-            </select>
-            <button onclick="proceedToNextStep()">Next</button>
-        </div>
-
-        <!-- Age Question for COVID-19 and Flu -->
-        <div class="question hidden" id="ageQuestionCovidFlu">
-            <p>Is the vaccine recipient under 6 months of age?</p>
-            <label>
-                <input type="radio" name="underAgeCovidFlu" value="yes"> Yes
-            </label>
-            <label>
-                <input type="radio" name="underAgeCovidFlu" value="no"> No
-            </label>
-            <button onclick="handleAgeConfirmationCovidFlu()">Next</button>
-        </div>
-
-        <!-- Age Question for Tetanus -->
-        <div class="question hidden" id="ageQuestionTetanus">
-            <p>Is the vaccine recipient under 7 years of age?</p>
-            <label>
-                <input type="radio" name="underAgeTetanus" value="yes"> Yes
-            </label>
-            <label>
-                <input type="radio" name="underAgeTetanus" value="no"> No
-            </label>
-            <button onclick="handleAgeConfirmationTetanus()">Next</button>
-        </div>
-
-        <!-- Age Question for Mumps -->
-        <div class="question hidden" id="ageQuestionMumps">
-            <p>Is the vaccine recipient under 1 year of age?</p>
-            <label>
-                <input type="radio" name="underAgeMumps" value="yes"> Yes
-            </label>
-            <label>
-                <input type="radio" name="underAgeMumps" value="no"> No
-            </label>
-            <button onclick="handleAgeConfirmationMumps()">Next</button>
-        </div>
-
-        <!-- Age Question for Measles -->
-        <div class="question hidden" id="ageQuestionMeasles">
-            <p>Is the vaccine recipient under 1 year of age?</p>
-            <label>
-                <input type="radio" name="underAgeMeasles" value="yes"> Yes
-            </label>
-            <label>
-                <input type="radio" name="underAgeMeasles" value="no"> No
-            </label>
-            <button onclick="handleAgeConfirmationMeasles()">Next</button>
-        </div>
-
-        <!-- Group Size Question -->
-        <div class="question hidden" id="groupQuestion">
-            <p>How many people are in the group?</p>
-            <input type="number" id="groupSizeInput" min="1">
-            <button onclick="showGroupAgeQuestion()">Next</button>
-        </div>
-
-        <!-- Group Age Question for COVID-19 and Flu -->
-        <div class="question hidden" id="groupAgeQuestionCovidFlu">
-            <p>Is anyone in your group under 6 months of age?</p>
-            <label>
-                <input type="radio" name="underAgeGroupCovidFlu" value="yes"> Yes
-            </label>
-            <label>
-                <input type="radio" name="underAgeGroupCovidFlu" value="no"> No
-            </label>
-            <button onclick="handleGroupAgeConfirmationCovidFlu()">Next</button>
-        </div>
-
-        <!-- Group Age Question for Tetanus -->
-        <div class="question hidden" id="groupAgeQuestionTetanus">
-            <p>Is anyone in your group under 7 years of age?</p>
-            <label>
-                <input type="radio" name="underAgeGroupTetanus" value="yes"> Yes
-            </label>
-            <label>
-                <input type="radio" name="underAgeGroupTetanus" value="no"> No
-            </label>
-            <button onclick="handleGroupAgeConfirmationTetanus()">Next</button>
-        </div>
-
-        <!-- Group Age Question for Mumps -->
-        <div class="question hidden" id="groupAgeQuestionMumps">
-            <p>Is anyone in your group under 1 year of age?</p>
-            <label>
-                <input type="radio" name="underAgeGroupMumps" value="yes"> Yes
-            </label>
-            <label>
-                <input type="radio" name="underAgeGroupMumps" value="no"> No
-            </label>
-            <button onclick="handleGroupAgeConfirmationMumps()">Next</button>
-        </div>
-
-        <!-- Group Age Question for Measles -->
-        <div class="question hidden" id="groupAgeQuestionMeasles">
-            <p>Is anyone in your group under 1 year of age?</p>
-            <label>
-                <input type="radio" name="underAgeGroupMeasles" value="yes"> Yes
-            </label>
-            <label>
-                <input type="radio" name="underAgeGroupMeasles" value="no"> No
-            </label>
-            <button onclick="handleGroupAgeConfirmationMeasles()">Next</button>
-        </div>
-
-<!-- Calendar Section -->
-<div class="calendar hidden" id="calendar">
-    <p>Select a date and time:</p>
-    <input type="date" id="datePicker" onchange="validateDate()">
-    <div class="hidden" id="timeSelection">
-        <p>Available times:</p>
-        <select id="timePicker">
-            <option value="11:00 AM">11:00 AM</option>
-            <option value="1:00 PM">1:00 PM</option>
-            <option value="3:00 PM">3:00 PM</option>
-            <option value="5:00 PM">5:00 PM</option>
-            <option value="6:00 PM">6:00 PM</option>
-            <option value="6:30 PM">6:30 PM</option>
-            <option value="7:30 PM">7:30 PM</option>
-            <option value="8:00 PM">8:00 PM</option>
-            <option value="9:00 PM">9:00 PM</option>
-            <option value="9:30 PM">9:30 PM</option>
-        </select>
-    </div>
-    <button onclick="showContactDetails()" class="hidden" id="calendarNextButton">Next</button>
-</div>
-
-        <!-- Contact Details Section -->
-        <div class="contact-details hidden" id="contactDetails">
-            <p>Please enter your contact details:</p>
-            <input type="text" id="nameInput" placeholder="Your Name">
-            <input type="email" id="emailInput" placeholder="Your Email">
-            <input type="tel" id="phoneInput" placeholder="Your Phone Number">
-            <button onclick="submitForm()">Submit</button>
-        </div>
-
-        <!-- Thank You Message Section -->
-        <div class="thank-you-message hidden" id="thankYouMessage">
-            <p>Thank you for booking a vaccination with Futura!</p>
-            <p>We are excited to see you later.</p>
-            <p class="note">You will be emailed soon regarding confirmation of your appointment.</p>
-        </div>
-    </div>
-</body>
-</html>
+            <h1>Vaccine Scheduling</h1>
+    <div class="option-buttons">
+    <button onclick="selectOption('individual')">For Yourself</button>
+    <button onclick="selectOption('group')">For a Group</button>
+    </div>
+    
+    <!-- Vaccine Selection Section -->
+    <div class="question hidden" id="vaccineSelection">
+    <p>Which vaccine are you scheduling for?</p>
+    <select id="vaccineType" onchange="handleVaccineSelection()">
+    <option value="">Select a vaccine...</option>
+    <option value="covid19">COVID-19</option>
+    <option value="flu">Flu</option>
+    <option value="tetanus">Tetanus</option>
+    <option value="mumps">Mumps</option>
+    <option value="measles">Measles</option>
+    </select>
+    <button onclick="proceedToNextStep()">Next</button>
+    </div>
+   
+    <!-- Age Question for COVID-19 and Flu -->
+    <div class="question hidden" id="ageQuestionCovidFlu">
+    <p>Is the vaccine recipient under 6 months of age?</p>
+    <label>
+    <input type="radio" name="underAgeCovidFlu" value="yes"> Yes
+    </label>
+    <label>
+    <input type="radio" name="underAgeCovidFlu" value="no"> No
+    </label>
+    <button onclick="handleAgeConfirmationCovidFlu()">Next</button>
+    </div>
+   
+    <!-- Age Question for Tetanus -->
+    <div class="question hidden" id="ageQuestionTetanus">
+    <p>Is the vaccine recipient under 7 years of age?</p>
+    <label>
+    <input type="radio" name="underAgeTetanus" value="yes"> Yes
+    </label>
+    <label>
+    <input type="radio" name="underAgeTetanus" value="no"> No
+    </label>
+    <button onclick="handleAgeConfirmationTetanus()">Next</button>
+    </div>
+   
+    <!-- Age Question for Mumps -->
+    <div class="question hidden" id="ageQuestionMumps">
+    <p>Is the vaccine recipient under 1 year of age?</p>
+    <label>
+    <input type="radio" name="underAgeMumps" value="yes"> Yes
+    </label>
+    <label>
+    <input type="radio" name="underAgeMumps" value="no"> No
+    </label>
+    <button onclick="handleAgeConfirmationMumps()">Next</button>
+    </div>
+   
+    <!-- Age Question for Measles -->
+    <div class="question hidden" id="ageQuestionMeasles">
+    <p>Is the vaccine recipient under 1 year of age?</p>
+    <label>
+    <input type="radio" name="underAgeMeasles" value="yes"> Yes
+    </label>
+    <label>
+    <input type="radio" name="underAgeMeasles" value="no"> No
+    </label>
+    <button onclick="handleAgeConfirmationMeasles()">Next</button>
+    </div>
+   
+    <!-- Group Size Question -->
+    <div class="question hidden" id="groupQuestion">
+    <p>How many people are in the group?</p>
+    <input type="number" id="groupSizeInput" min="1">
+    <button onclick="showGroupAgeQuestion()">Next</button>
+    </div>
+   
+    <!-- Group Age Question for COVID-19 and Flu -->
+    <div class="question hidden" id="groupAgeQuestionCovidFlu">
+    <p>Is anyone in your group under 6 months of age?</p>
+    <label>
+    <input type="radio" name="underAgeGroupCovidFlu" value="yes"> Yes
+    </label>
+    <label>
+    <input type="radio" name="underAgeGroupCovidFlu" value="no"> No
+    </label>
+    <button onclick="handleGroupAgeConfirmationCovidFlu()">Next</button>
+    </div>
+   
+    <!-- Group Age Question for Tetanus -->
+    <div class="question hidden" id="groupAgeQuestionTetanus">
+    <p>Is anyone in your group under 7 years of age?</p>
+    <label>
+    <input type="radio" name="underAgeGroupTetanus" value="yes"> Yes
+    </label>
+    <label>
+    <input type="radio" name="underAgeGroupTetanus" value="no"> No
+    </label>
+    <button onclick="handleGroupAgeConfirmationTetanus()">Next</button>
+    </div>
+   
+    <!-- Group Age Question for Mumps -->
+    <div class="question hidden" id="groupAgeQuestionMumps">
+    <p>Is anyone in your group under 1 year of age?</p>
+    <label>
+    <input type="radio" name="underAgeGroupMumps" value="yes"> Yes
+    </label>
+    <label>
+    <input type="radio" name="underAgeGroupMumps" value="no"> No
+    </label>
+    <button onclick="handleGroupAgeConfirmationMumps()">Next</button>
+    </div>
+   
+    <!-- Group Age Question for Measles -->
+    <div class="question hidden" id="groupAgeQuestionMeasles">
+    <p>Is anyone in your group under 1 year of age?</p>
+    <label>
+    <input type="radio" name="underAgeGroupMeasles" value="yes"> Yes
+    </label>
+    <label>
+    <input type="radio" name="underAgeGroupMeasles" value="no"> No
+    </label>
+    <button onclick="handleGroupAgeConfirmationMeasles()">Next</button>
+    </div>
+   
+   <!-- Calendar Section -->
+   <div class="calendar hidden" id="calendar">
+    <p>Select a date and time:</p>
+    <input type="date" id="datePicker" onchange="validateDate()">
+    <div class="hidden" id="timeSelection">
+    <p>Available times:</p>
+    <select id="timePicker">
+    <option value="11:00 AM">11:00 AM</option>
+    <option value="1:00 PM">1:00 PM</option>
+    <option value="3:00 PM">3:00 PM</option>
+    <option value="5:00 PM">5:00 PM</option>
+    <option value="6:00 PM">6:00 PM</option>
+    <option value="6:30 PM">6:30 PM</option>
+    <option value="7:30 PM">7:30 PM</option>
+    <option value="8:00 PM">8:00 PM</option>
+    <option value="9:00 PM">9:00 PM</option>
+    <option value="9:30 PM">9:30 PM</option>
+    </select>
+    </div>
+    <button onclick="showContactDetails()" class="hidden" id="calendarNextButton">Next</button>
+   </div>
+   
+    <!-- Contact Details Section -->
+    <div class="contact-details hidden" id="contactDetails">
+    <p>Please enter your contact details:</p>
+    <form id="vaccineForm" onsubmit="submitForm(event)">
+    <input type="text" id="nameInput" placeholder="Your Name">
+    <input type="email" id="emailInput" placeholder="Your Email">
+    <input type="tel" id="phoneInput" placeholder="Your Phone Number">
+    <button type="submit">Submit</button>
+    </form>
+    </div>
+   
+    <!-- Thank You Message Section -->
+    <div id="thankYouMessage" class="thank-you-message hidden">
+    <h2>Thank you for booking a vaccination with Futura!</h2>
+    <p>We look forward to seeing you later.</p>
+    <p class="note">You will be emailed soon regarding confirmation of your appointment.</p>
+    </div>
+    </div>
+   </body>
+   </html>
