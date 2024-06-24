@@ -1,3 +1,4 @@
+// fade in 1 by 1
 console.log('starting...');
 var elements = document.querySelectorAll('.fade-elements');
 console.log(elements);
@@ -48,4 +49,36 @@ function updateCounter(counter) {
 }
 
    
+document.addEventListener('DOMContentLoaded', () => {
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.slider-wrapper img');
+    const sliderWrapper = document.querySelector('.slider-wrapper');
+    const dots = document.querySelectorAll('.dot');
   
+    const showSlides = (n) => {
+      if (n >= slides.length) {
+        slideIndex = 0;
+      } else if (n < 0) {
+        slideIndex = slides.length - 1;
+      } else {
+        slideIndex = n;
+      }
+      const slideWidth = slides[0].clientWidth;
+      sliderWrapper.style.transform = `translateX(${-slideWidth * slideIndex}px)`;
+      dots.forEach((dot, index) => {
+        dot.className = (index === slideIndex) ? 'dot active' : 'dot';
+      });
+    };
+  
+    const currentSlide = (n) => {
+      showSlides(n);
+    };
+  
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        currentSlide(index);
+      });
+    });
+  
+    showSlides(slideIndex);
+});

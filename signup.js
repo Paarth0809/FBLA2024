@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const fs = require('fs');
 const session = require('express-session');
 const path = require('path');
-
+const { v4: uuidv4 } = require('uuid');
 const app = express();
 const port = 3000;
 
@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Set up session management
 app.use(session({
-  secret: 'yourSecretKey',
+  secret: 'ILoveFBLAAndCoding2024',
   resave: false,
   saveUninitialized: true,
   cookie: { secure: false } // Set secure to true in production
@@ -52,7 +52,7 @@ app.post('/signup', async (req, res) => {
   res.status(201).send('User created');
 });
 
-app.post('/login', async (req, res) => {
+app.post('/login', async function(req, res) {
   const { username, password } = req.body;
   const users = getUsers();
   const user = users.find(user => user.signupEmail.toLowerCase() === username.toLowerCase());
@@ -61,7 +61,7 @@ app.post('/login', async (req, res) => {
     return res.status(400).send('Invalid email or password');
   }
 
-  // Save user session
+  // Save user in the Session
   req.session.user = { username: user.signupEmail };
   res.status(200).send('Login successful');
 });
@@ -88,7 +88,7 @@ app.get('/logout', (req, res) => {
 // Add review functionality
 const reviewsFile = 'reviews.json';
 
-const getReviews = () => {
+function getReviews() {
   if (!fs.existsSync(reviewsFile)) {
     fs.writeFileSync(reviewsFile, JSON.stringify([]));
   }
@@ -96,7 +96,7 @@ const getReviews = () => {
   return JSON.parse(data);
 };
 
-const saveReviews = (reviews) => {
+function saveReviews(reviews) {
   fs.writeFileSync(reviewsFile, JSON.stringify(reviews));
 };
 
@@ -112,6 +112,56 @@ app.post('/api/reviews', (req, res) => {
 app.get('/api/reviews', (req, res) => {
   const reviews = getReviews();
   res.json(reviews);
+});
+
+// Add review functionality
+const appointmentsFile = 'appointments.json';
+
+function getAppointments() {
+  if (!fs.existsSync(appointmentsFile)) {
+    fs.writeFileSync(appointmentsFile, JSON.stringify({}));
+  }
+  const data = fs.readFileSync(appointmentsFile);
+  return JSON.parse(data);
+};
+
+function saveAppointments(appointments) {
+  console.log("appointments: ", appointments);
+  try {
+    const appointmentsJSON = JSON.stringify(appointments);
+    console.log("appointments json: ", appointmentsJSON);
+    fs.writeFileSync(appointmentsFile, appointmentsJSON);
+  } catch (err) {
+    console.error('Failed to save appointments:', err);
+  }
+};
+
+// Endpoint to save booked appointments
+app.post('/api/book-appointment', function(req, res) {
+    const appointment = req.body;
+    console.log("req.body: ", req.body);
+    const signupEmail = req.session.user.username;
+    console.log("signupEmail: ", signupEmail);
+
+    const bookedAppointments = getAppointments();
+    if (!bookedAppointments[signupEmail]) {
+        bookedAppointments[signupEmail] = [];
+    }
+    //appointment.id = uuidv4(); // Assign a unique ID to the appointment
+    bookedAppointments[signupEmail].push(appointment);
+    console.log("booked appointments: ", bookedAppointments);
+    saveAppointments(bookedAppointments);
+    res.status(201).json(appointment);
+});
+
+// Endpoint to retrieve booked appointments for a user
+app.get('/api/appointments', (req, res) => {
+    const user = req.session.user;
+    if (!user) {
+        return res.status(401).send({ message: 'Unauthorized' });
+    }
+    const bookedAppointments = getAppointments();
+    res.status(200).send({ appointments: bookedAppointments[user.username] || [] });
 });
 
 // Serve the main HTML file
