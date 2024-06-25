@@ -133,7 +133,7 @@ a {
 
 }
 
-@media (max-width:710px) {
+@media (max-width:969px) {
   .links {
     visibility: hidden;
   }
