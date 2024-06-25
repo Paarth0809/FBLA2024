@@ -7,7 +7,7 @@ body {
 
 /* Footer section */
 footer {
-  color: #ffffff;
+  
   padding: 2rem 0;
 }
 
@@ -53,6 +53,7 @@ footer {
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  margin: 3rem;
 }
 
 .footer-links {

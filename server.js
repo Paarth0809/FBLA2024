@@ -124,7 +124,7 @@ app.get('/api/reviews', (req, res) => {
   res.json(reviews);
 });
 
-// Add review functionality
+// save info of appointments to the json file
 const appointmentsFile = 'appointments.json';
 
 function getAppointments() {
@@ -171,7 +171,9 @@ app.get('/api/appointments', (req, res) => {
         return res.status(401).send({ message: 'Unauthorized' });
     }
     const bookedAppointments = getAppointments();
-    res.status(200).send({ appointments: bookedAppointments[user.username] || [] });
+    console.log("Appointments: ", bookedAppointments[user.username]);
+    res.status(200).send(bookedAppointments[user.username] || []);
+
 });
 
 // Serve the main HTML file

@@ -144,8 +144,12 @@ function handleAgeConfirmationMeasles() {
 
 function showGroupAgeQuestion() {
     const groupSize = document.getElementById('groupSizeInput').value;
-    if (!groupSize || groupSize < 1) {
+    if (!groupSize || groupSize <= 1) {
         alert('Please enter a valid group size.');
+        return;
+    }
+    else if (!groupSize || groupSize > 6) {
+        alert('Please enter a valid group size. Group size is 2-6')
         return;
     }
 
@@ -295,11 +299,17 @@ async function submitForm(event) {
     const email = document.getElementById('emailInput').value;
     const phone = document.getElementById('phoneInput').value;
     const selectedVaccine = document.getElementById('vaccineType').value;
+    const selectedDate = document.getElementById('datePicker').value;
+    const selectedTime = document.getElementById('timePicker').value;
     const groupSize = document.getElementById('groupSizeInput').value;
 
     // Validate form fields
     if (name.trim() === '' || email.trim() === '' || phone.trim() === '') {
         alert('Please fill out all the fields.');
+        return;
+    }
+    if (phone<10) {
+        alert('Not a valid phone number');
         return;
     }
 
@@ -311,7 +321,10 @@ async function submitForm(event) {
  <strong>Details:</strong><br>
  - Vaccine: ${selectedVaccine}<br>
  - Contact Email: ${email}<br>
- - Contact Phone: ${phone}<br><br>
+ - Contact Phone: ${phone}<br>
+ - Date: ${selectedDate}<br>
+ - Time: ${selectedTime}<br>
+ - Groupsize: ${groupSize}<br>
  Please feel free to contact us if you have any further questions.<br><br>
  Best regards,<br>
  The Futura Team
@@ -342,7 +355,10 @@ async function submitForm(event) {
         name: name,
         email: email,
         phone: phone,
-        selectedVaccine: selectedVaccine
+        selectedVaccine: selectedVaccine,
+        selectedDate: selectedDate,
+        selectedTime: selectedTime,
+
     }
 
     response = await fetch('/api/book-appointment', {
