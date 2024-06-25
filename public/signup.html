@@ -6,6 +6,7 @@
   <link rel="stylesheet" type="text/css" href="signup.css" />
   <link rel="stylesheet" href="navbar.css" />
   <link rel="stylesheet" href="footer.css" />
+  <link rel="stylesheet" href="chatbot.css"/>
 
   <!-- This is the font and icons -->
   <link
@@ -73,7 +74,17 @@
 
   <div id="message"></div>
 
-<!-- Our footer -->
+<!-- Chatbot -->
+  <div id="chat-container">
+    <div id="chat-box"></div>
+    <div id="input-container">
+      <input type="text" id="user-input" placeholder="Enter your question here...">
+      <button id="send-btn">Send</button>
+    </div>
+  </div>
+  <button id="chat-toggle" class="chat-toggle" onclick="myFunction()">💬</button>
+
+  <!-- Our footer -->
 <footer>
   <div id="footer-line-break"></div>
   <div class="footer-container">
@@ -119,6 +130,7 @@
 <script src="https://smtpjs.com/v3/smtp.js"></script>
 <script src="signup.js"></script>
 
+<script src="chatbot.js"></script>
 </body>
 
 </html>

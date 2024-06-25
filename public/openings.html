@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="openings.css" />
   <link rel="stylesheet" href="navbar.css" />
   <link rel="stylesheet" href="footer.css" />
+  <link rel="stylesheet" href="chatbot.css"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -171,7 +172,17 @@
 
 
     
-   <!-- Our footer -->
+   <!-- Chatbot -->
+  <div id="chat-container">
+    <div id="chat-box"></div>
+    <div id="input-container">
+      <input type="text" id="user-input" placeholder="Enter your question here...">
+      <button id="send-btn">Send</button>
+    </div>
+  </div>
+  <button id="chat-toggle" class="chat-toggle" onclick="myFunction()">💬</button>
+
+  <!-- Our footer -->
 <footer>
   <div id="footer-line-break"></div>
   <div class="footer-container">
@@ -317,6 +328,7 @@
 
 
 
+<script src="chatbot.js"></script>
 </body>
 
 </html>

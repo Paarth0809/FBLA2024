@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="job2.css" />
     <link rel="stylesheet" href="navbar.css" />
     <link rel="stylesheet" href="footer.css" />
+  <link rel="stylesheet" href="chatbot.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- This is the font and icons -->
@@ -118,7 +119,17 @@
     <p class="job1Desc">
         Additionally, you will be involved in organizing and conducting product presentations, attending medical conferences and trade shows, and providing feedback on market trends and competitor activity. The ideal candidate will have a proven track record in pharmaceutical sales, with a strong understanding of the healthcare industry and a network of contacts in the field. Excellent communication and negotiation skills are essential, as well as the ability to work independently and as part of a team. This role requires a high level of self-motivation and the ability to effectively manage your time and prioritize tasks.            </p>
 </p>
-    <!-- Our footer -->
+    <!-- Chatbot -->
+  <div id="chat-container">
+    <div id="chat-box"></div>
+    <div id="input-container">
+      <input type="text" id="user-input" placeholder="Enter your question here...">
+      <button id="send-btn">Send</button>
+    </div>
+  </div>
+  <button id="chat-toggle" class="chat-toggle" onclick="myFunction()">💬</button>
+
+  <!-- Our footer -->
 <footer>
   <div id="footer-line-break"></div>
   <div class="footer-container">
@@ -161,6 +172,7 @@
   </div>
 </footer>
 <script src="openings.js"></script>
+<script src="chatbot.js"></script>
 </body>
 
 </html>

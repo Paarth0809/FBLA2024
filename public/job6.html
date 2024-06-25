@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="job6.css" />
     <link rel="stylesheet" href="navbar.css" />
     <link rel="stylesheet" href="footer.css" />
+  <link rel="stylesheet" href="chatbot.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- This is the font and icons -->
@@ -115,7 +116,17 @@
 
     </div>
 </p>
-    <!-- Our footer -->
+    <!-- Chatbot -->
+  <div id="chat-container">
+    <div id="chat-box"></div>
+    <div id="input-container">
+      <input type="text" id="user-input" placeholder="Enter your question here...">
+      <button id="send-btn">Send</button>
+    </div>
+  </div>
+  <button id="chat-toggle" class="chat-toggle" onclick="myFunction()">💬</button>
+
+  <!-- Our footer -->
 <footer>
   <div id="footer-line-break"></div>
   <div class="footer-container">
@@ -158,6 +169,7 @@
   </div>
 </footer>
 <script src="openings.js"></script>
+<script src="chatbot.js"></script>
 </body>
 
 </html>

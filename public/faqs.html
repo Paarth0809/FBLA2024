@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="faqs.css" />
   <link rel="stylesheet" href="navbar.css" />
   <link rel="stylesheet" href="footer.css" />
+  <link rel="stylesheet" href="chatbot.css"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- This is the font and icons -->
@@ -101,8 +102,28 @@
         <div class="faq-content">Please bring a valid ID and your insurance card (if applicable) to your vaccine appointment. If you have any health concerns or allergies, please inform us beforehand.</div>
     </div>
 
-<!-- Our footer -->
-<!-- Our footer -->
+<!-- Chatbot -->
+  <div id="chat-container">
+    <div id="chat-box"></div>
+    <div id="input-container">
+      <input type="text" id="user-input" placeholder="Enter your question here...">
+      <button id="send-btn">Send</button>
+    </div>
+  </div>
+  <button id="chat-toggle" class="chat-toggle" onclick="myFunction()">💬</button>
+
+  <!-- Our footer -->
+<!-- Chatbot -->
+  <div id="chat-container">
+    <div id="chat-box"></div>
+    <div id="input-container">
+      <input type="text" id="user-input" placeholder="Enter your question here...">
+      <button id="send-btn">Send</button>
+    </div>
+  </div>
+  <button id="chat-toggle" class="chat-toggle" onclick="myFunction()">💬</button>
+
+  <!-- Our footer -->
 <footer>
     <hr id="footer-line-break">
     <div class="footer-container">
@@ -130,6 +151,7 @@
       </div>
     </div>
   </footer>
+<script src="chatbot.js"></script>
 </body>
 </html>
 

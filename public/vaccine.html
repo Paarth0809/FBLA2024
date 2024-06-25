@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vaccine Scheduling</title>
-    <link rel="stylesheet" type="text/css" href="vaccine.css">
-    <link rel="stylesheet" type="text/css" href="navbar.css">
-    <link rel="stylesheet" type="text/css" href="footer.css">
+    <link rel="stylesheet" type="text/css" href="vaccine.css" />
+    <link rel="stylesheet" type="text/css" href="navbar.css" />
+    <link rel="stylesheet" type="text/css" href="footer.css" />
+    <link rel="stylesheet" href="chatbot.css" />
     <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet">
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="vaccine.js"></script>
-    <script src="navbar.js" defer></script>
+    <script src="navbar.js"></script>
 </head>
+
 <body>
     <!-- Mobile version of the navbar -->
     <div class="topnav">
@@ -217,48 +220,62 @@
         </div>
     </div>
 
-<!-- Our footer -->
-<footer>
-    <div id="footer-line-break"></div>
-    <div class="footer-container">
-      <div class="footer-sub-container contact-us">
-        <h2 class="contact-header">Contact Us</h2>
-        <ul>
-          <li>Email: contact@example.com</li>
-          <li>Phone: (123) 456-7890</li>
-        </ul>
-      </div>
-      <div class="footer-sub-container footer-links-and-socials">
-        <div class="footer-links-container">
-          <a class="footer-links" href="faqs.html">FAQ's</a>
-          <span>|</span>
-          <a class="footer-links" href="citations.html">Citations</a>
-          <span>|</span>
-          <a class="footer-links" href="">Legal & Trademarks</a>
-          <span>|</span>
-          <a class="footer-links" href="">Terms of Service</a>
-          <span class="footer-desc">| © 2024 Futura, Inc, All Rights Reserved.</span>
+    <!-- Chatbot -->
+    <div id="chat-container">
+        <div id="chat-box"></div>
+        <div id="input-container">
+            <input type="text" id="user-input" placeholder="Enter your question here...">
+            <button id="send-btn">Send</button>
         </div>
-        <!-- Futura's socials -->
-        <div class="footer-socials-container">
-          <a class="social-item" href=""><img src="images/youtube.png" alt="YouTube"></a>
-          <a class="social-item" href="https://www.instagram.com/futura_medical"><img src="images/instagram.png"
-              alt="Instagram"></a>
-          <a class="social-item" href="https://www.tiktok.com/@futura.medical"><img src="images/tiktok.png" alt="TikTok"></a>
-          <a class="social-item" href="https://twitter.com/FuturaMedical_"><img src="images/twitter.png" alt="Twitter"></a>
-          <a class="social-item" href=""><img src="images/facebook.png" alt="Facebook"></a>
-        </div>
-      </div>
-      <div class="footer-sub-container web-developers">
-        <h2 class="web-dev-header">Web Developers</h2>
-        <ul class="web-dev-list">
-          <li>Paarth Rathod</li>
-          <li>Sidharth Santhosh</li>
-          <li>Arjun Pendharkar</li>
-        </ul>
-      </div>
     </div>
-  </footer>
+    <button id="chat-toggle" class="chat-toggle" onclick="myFunction()">💬</button>
 
+    <!-- Our footer -->
+    <footer>
+        <div id="footer-line-break"></div>
+        <div class="footer-container">
+            <div class="footer-sub-container contact-us">
+                <h2 class="contact-header">Contact Us</h2>
+                <ul>
+                    <li>Email: contact@example.com</li>
+                    <li>Phone: (123) 456-7890</li>
+                </ul>
+            </div>
+            <div class="footer-sub-container footer-links-and-socials">
+                <div class="footer-links-container">
+                    <a class="footer-links" href="faqs.html">FAQ's</a>
+                    <span>|</span>
+                    <a class="footer-links" href="citations.html">Citations</a>
+                    <span>|</span>
+                    <a class="footer-links" href="">Legal & Trademarks</a>
+                    <span>|</span>
+                    <a class="footer-links" href="">Terms of Service</a>
+                    <span class="footer-desc">| © 2024 Futura, Inc, All Rights Reserved.</span>
+                </div>
+                <!-- Futura's socials -->
+                <div class="footer-socials-container">
+                    <a class="social-item" href=""><img src="images/youtube.png" alt="YouTube"></a>
+                    <a class="social-item" href="https://www.instagram.com/futura_medical"><img
+                            src="images/instagram.png" alt="Instagram"></a>
+                    <a class="social-item" href="https://www.tiktok.com/@futura.medical"><img src="images/tiktok.png"
+                            alt="TikTok"></a>
+                    <a class="social-item" href="https://twitter.com/FuturaMedical_"><img src="images/twitter.png"
+                            alt="Twitter"></a>
+                    <a class="social-item" href=""><img src="images/facebook.png" alt="Facebook"></a>
+                </div>
+            </div>
+            <div class="footer-sub-container web-developers">
+                <h2 class="web-dev-header">Web Developers</h2>
+                <ul class="web-dev-list">
+                    <li>Paarth Rathod</li>
+                    <li>Sidharth Santhosh</li>
+                    <li>Arjun Pendharkar</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="chatbot.js"></script>
 </body>
+
 </html>
