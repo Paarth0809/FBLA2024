@@ -5,6 +5,7 @@ body {
     color: #333;
     margin: 0;
     padding: 0;
+    
 }
 
 /* Login First Element */
@@ -19,41 +20,23 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
     max-width: 70%; /* Maximum width as 90% of the viewport */
     width: 70%; /* Width also set to 90% for responsiveness */
-    margin: 2rem auto; /* Center horizontally with vertical margin */
+    margin: 30rem auto; /* Center horizontally with vertical margin */
     font-size: 1.2rem; /* Slightly larger text */
     font-weight: 600; /* Bold text */
-    position: fixed; /* Position fixed to center in viewport */
-    top: 50%; /* Align from the top */
-    left: 50%; /* Align from the left */
-    transform: translate(-50%, -50%); /* Center horizontally and vertically */
+    /* position: relative; Position fixed to center in viewport */
+ 
+    
+    
 }
 
-/* Responsive adjustments */
-@media screen and (max-width: 768px) {
-    #loginFirst {
-        max-width: 95%; /* Adjust max-width for smaller screens */
-        width: 95%; /* Adjust width for smaller screens */
-        font-size: 1rem; /* Adjust font size for smaller screens */
-        padding: 0.75rem; /* Adjust padding for smaller screens */
-    }
-}
 
 @media screen and (max-width: 480px) {
     #loginFirst {
-        max-width: 100%; /* Full width for very small screens */
-        width: 100%; /* Full width for very small screens */
-        font-size: 0.8rem; /* Further reduce font size for very small screens */
-        padding: 0.5rem; /* Further reduce padding for very small screens */
+        margin: 15rem auto; /* Reduce margin for smaller screens */
     }
 }
-/* Responsive adjustments for Login First Element */
-@media screen and (max-width: 480px) {
-    #loginFirst {
-        font-size: 1rem; /* Adjust font size for smaller screens */
-        padding: 0.75rem; /* Adjust padding for smaller screens */
-        margin: 1rem; /* Reduce margin for smaller screens */
-    }
-}
+
+
 
 /* Vaccine Scheduling Container */
 .container {
