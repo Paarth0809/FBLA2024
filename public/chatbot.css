@@ -6,14 +6,14 @@
     width: 400px;
     position: fixed; /* Fixes the position relative to the viewport */
     right: 10px; /* Moves the container to the right edge */
-    bottom: 10%; /* Position at the bottom */
+    bottom: 15%; /* Position at the bottom */
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
     background: #fff;
     color: #333;
     flex-direction: column;
-    max-height: 80vh; /* Limit height to avoid excessive scrolling */
+    max-height: 100vh; /* Limit height to avoid excessive scrolling */
     animation: fadeIn 0.5s ease forwards;
     display: none;
 }

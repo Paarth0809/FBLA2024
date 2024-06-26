@@ -2,176 +2,222 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
-    <link rel="stylesheet" href="index.css" />
-    <link rel="stylesheet" href="navbar.css" />
-    <link rel="stylesheet" href="footer.css" />
-  <link rel="stylesheet" href="chatbot.css"/>
-    <link rel="stylesheet" href="citations.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- This is the font and icons -->
-    <!-- This is the font and icons -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="navbar.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apply</title>
+  <link rel="stylesheet" href="apply.css" />
+  <link rel="stylesheet" href="navbar.css" />
+  <link rel="stylesheet" href="footer.css" />
+  <link rel="stylesheet" href="chatbot.css" />
+  <link rel="stylesheet" href="citations.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- This is the font and icons -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="navbar.js"></script>
+
 </head>
 
-<body>
-    <!-- Mobile version of the navbar -->
-    <div class="topnav">
-        <a href="index.html">
-            <img src="images/transparent.png" id="logo"></img>
-        </a>
-        <!-- Navigation links (hidden by default) -->
-        <div id="myLinks">
-            <a class="linkcolor" href="index.html">Home</a>
-            <a class="linkcolor" href="openings.html">Job Openings</a>
-            <a class="linkcolor" href="vaccines.html">Vaccines appointments</a>
-            <a class="linkcolor" href="apply.html">Apply</a>
-        </div>
-        <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-            <i class="fa fa-bars"></i>
-        </a>
+<!-- mobile navbar -->
+<div class="topnav">
+  <a href="index.html">
+    <img src="images/transparent.png" id="logo"></img>
+  </a>
+  <!-- Navigation links (hidden by default) -->
+  <div id="myLinks">
+    <a class="linkcolor" href="index.html">Home</a>
+    <a class="linkcolor" href="openings.html">Job Openings</a>
+    <a class="linkcolor" href="vaccines.html">Vaccines appointments</a>
+    <a class="linkcolor" href="apply.html">Apply</a>
+  </div>
+  <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+<!-- desktop navbar -->
+<div class="navbar">
+  <a href="index.html"><img src="images/Logo.png" id="logo" alt="Logo"></a>
+  <a class="links" href="index.html">Home</a>
+  <a class="links" href="openings.html">Job Openings</a>
+  <a class="links" href="vaccine.html">Vaccine Appointments</a>
+  <a class="links" href="apply.html">Apply</a>
+  <a class="links" href="login.html">Log In</a>
+  <a class="links" id="Contactmargin" href="signup.html">Sign Up</a>
+</div>
+<hr id="nav-bar-split">
+</hr>
+
+
+<h1 id="citation-sources">
+  Sources & Citations
+</h1>
+
+
+<div class="master-container">
+  <!-- Container for Images -->
+  <div class="container-for-sources">
+    <h3 class="images-other">Images</h3>
+    <div class="citation-item">
+      <h4>Icons</h4>
+      <p> We used a website called <a href="https://www.flaticon.com/authors/flatart-icons" target="_blank">Icons</a> to
+        create the simplistic icons we used in our statistics. This allowed our statistics page to look more
+        professional while keeping a clean and simplistic look.</p>
     </div>
-
-    <!-- desktop version of the navigation bar -->
-    <div class="navbar">
-        <a href="index.html">
-            <img src="images/Logo.png" id="logo" alt="Logo"></img>
-        </a>
-        <a class="links" href="index.html">Home</a>
-    <a class="links" href="openings.html">Job Openings</a>
-    <a class="links" href="vaccine.html">Vaccine Appointments</a>
-    <a class="links" href="apply.html">Apply</a>
-    <a class="links" href="login.html">Log In</a>
-    <a class="links" id="Contactmargin" href="signup.html">Sign Up</a>
+    <div class="citation-item">
+      <h4>Futura Logo</h4>
+      <p>We created a beautiful icon representing our company using the <a href="https://looka.com/"
+          target="_blank">Looka</a> website. This tool allowed us to design an emblem that reflects our brand's identity
+        and values.</p>
     </div>
-    <hr id="nav-bar-split">
-    </hr>
-
-    <h1 id="citation-sources">
-        Sources & Citations
-    </h1>
-
-    <div class="master-container">
-        <div class="container-for-sources">
-            <h3 class="images-other"> Images </h3>
-            <div class="small-container">
-                <div class="small-container-items">
-                    <a href="https://wordart.com/">Word Art: https://wordart.com/</a>
-                </div>
-                <div class="small-container-items">
-                    <a
-                        href="https://www.proclinical.com/blogs/2018-2/how-to-get-a-product-manager-job-within-life-sciences">
-                        Pharmaceutical Product Manager Image:
-                        https://www.proclinical.com/blogs/2018-2/how-to-get-a-product-manager-job-within-life-sciences</a>
-                </div>
-
-                <div class="small-container-items">
-                    <a
-                        href="https://www.ziprecruiter.com/career/Part-Time-Medical-Sales-Representative/What-Is-How-to-Become">
-                        Medical Sales Representative Image:
-                        https://www.ziprecruiter.com/career/Part-Time-Medical-Sales-Representative/What-Is-How-to-Become</a>
-                </div>
-                <div class="small-container-items">
-                    <a href="https://agilityportal.io/blog/internal-communications-in-healthcare-7-best-practices ">Healthcare
-                        Communications Specialist Image:
-                        https://agilityportal.io/blog/internal-communications-in-healthcare-7-best-practices </a>
-                </div>
-                <div class="small-container-items">
-                    <a href="https://www.aamc.org/news/10-things-you-didn-t-know-about-medical-residents">Homepage
-                        Image: https://www.aamc.org/news/10-things-you-didn-t-know-about-medical-residents</a>
-                </div>
-                <div class="small-container-items">
-                    <a
-                        href="https://www.afscme.org/blog/caught-in-limbo-afscme-member-struggles-with-student-loan-forgiveness">
-                        Student Loan Assistance Image:
-                        https://www.afscme.org/blog/caught-in-limbo-afscme-member-struggles-with-student-loan-forgiveness</a>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="container-for-sources">
-            <h3 id="" class="images-other"> Other</h3>
-            <div class="small-container">
-                <div class="small-container-items">
-                    <a href="https://smtpjs.com/"> Javascript Email Library: https://smtpjs.com/</a>
-                </div>
-                <div class="small-container-items">
-                    <a href="https://looka.com/"> Futura Logo: https://looka.com/</a>
-                </div>
-                <div class="small-container-items">
-                    <a href="https://www.flaticon.com/"> Social Icons: https://www.flaticon.com/</a>
-                </div>
-
-            </div>
-        </div>
+    <div class="citation-item">
+      <h4>Doctor's Image</h4>
+      <p>This <a
+          href="https://www.aamc.org/sites/default/files/styles/scale_and_crop_1200_x_666/public/diverse-medical-professionals-1324292283.jpg?itok=u6xm9Z22"
+          target="_blank">Image</a> was used on our home page to show off Futuras amazing team of Pharmacists, Doctors,
+        and Scientists.</p>
     </div>
-
-
-
-    <!-- Chatbot -->
-  <div id="chat-container">
-    <div id="chat-box"></div>
-    <div id="input-container">
-      <input type="text" id="user-input" placeholder="Enter your question here...">
-      <button id="send-btn">Send</button>
+    <div class="citation-item">
+      <h4>Job Images</h4>
+      <li><a href="https://www.talentmark.com/wp-content/uploads/2022/04/marketing-life-sciences.jpg"
+          target="_blank">Pharmaceutical Product Manager</a></li>
+      <li><a href="https://www.pharmasalestraining.org/wp-content/uploads/2021/01/shutterstock_1665468742-scaled.jpg"
+          target="_blank">Pharmaceutical Sales Representative</a></li>
+      <li><a
+          href="https://res.cloudinary.com/grand-canyon-university/image/fetch/w_750,h_564,c_fill,g_faces,q_auto,f_auto/https://www.gcu.edu/sites/default/files/media/images/Blog/nursing-health-care/Health%20communications%20specialist.jpg"
+          target="_blank">Healthcare Communications Specialist</a></li>
+      <li><a
+          href="https://graduate.northeastern.edu/resources/wp-content/uploads/sites/4/2020/11/How-to-Become-a-Pharmaceutical-Scientist.jpg"
+          target="_blank">Pharmaceutical Scientist</a></li>
+      <li><a href="https://collegeeducated.com/wp-content/uploads/2018/04/How-to-Become-a-Human-Resources-Manager.jpg"
+          target="_blank">Human Resources Manager</a></li>
+      <li><a href="https://www.talentmark.com/wp-content/uploads/2022/04/audit-factory.jpg" target="_blank">Quality
+          Assurance Manager</a></li>
+      <li><a href="https://www.varuna.net/storage/blogs/150921065712-varuna_blog1.jpg" target="_blank">Supply Chain
+          Manager</a></li>
+      <li><a
+          href="https://www.ziprecruiter.com/svc/fotomat/public-ziprecruiter/cms/1155959656DistributionSpecialist.jpg=ws1280x960"
+          target="_blank">Inventory Control Manager</a></li>
+      <li><a
+          href="https://onlinedegrees.sandiego.edu/wp-content/uploads/2023/06/five-steps-to-start-career-database-admin.jpg"
+          target="_blank">Database Administrator</a></li>
+      <li><a
+          href="https://www.uagc.edu/sites/default/files/styles/paid_hero_header_899x600/public/what%20is%20a%20clinical%20data%20manager%20blog%20hero.jpg.webp?itok=49cFp4_4"
+          target="_blank">Clinical Data Manager</a></li>
+      <li><a href="https://www.freshbooks.com/wp-content/uploads/2022/04/preparing-your-accountant-for-taxes.jpg"
+          target="_blank">Accountant</a></li>
+      <li><a
+          href="https://careers.churchdwight.com/media/1456/church_dwight_day_228428.jpg?width=500&height=333.3333333333333"
+          target="_blank">Brand Manager</a></li>
     </div>
   </div>
-  <button id="chat-toggle" class="chat-toggle" onclick="myFunction()">💬</button>
 
-  <!-- Our footer -->
-    <!-- Chatbot -->
-  <div id="chat-container">
-    <div id="chat-box"></div>
-    <div id="input-container">
-      <input type="text" id="user-input" placeholder="Enter your question here...">
-      <button id="send-btn">Send</button>
+
+
+  <div class="container-for-sources">
+    <h3 class="images-other">Other</h3>
+    <div class="citation-item">
+      <h4>JavaScript Email Library</h4>
+      <p><a href="https://smtpjs.com/" target="_blank">SMTP.js</a> provides a simple and effective way to send emails
+        directly from JavaScript without requiring server-side code. This can be particularly useful for web
+        applications that need to send notifications or contact forms.</p>
+    </div>
+    <div class="citation-item">
+      <h4>Email Marketing Tools</h4>
+      <p><a href="https://elasticemail.com/" target="_blank">Elastic Email</a> provides robust tools for managing and
+        sending email campaigns. We used Elasticemail as the middle man in sending emails for both the Vaccine
+        Scheduling and the Job application. Our Elasticemail account also allows us to see when the email was sent, the
+        contents of the email, and when the user opens the email.</p>
+    </div>
+    <div class="citation-item">
+      <h4>Visual Studio Code</h4>
+      <p>Visual Studio Code (VS Code) is a powerful and versatile code editor developed by Microsoft. It supports a wide
+        range of programming languages and provides a wide variety of features and integrations. Its extensive
+        marketplace offers numerous extensions to enhance functionality. VS Code helped the development of our website
+        as it was our primary code editor and allowed us to connect the HTML, CSS and JS aspects of our websites to
+        create the perfect website for our client Futura Medical.</p>
+    </div>
+    <div class="citation-item">
+      <h4>ChatGPT and OpenAI API Key</h4>
+      <p>ChatGPT, developed by OpenAI, is a cutting-edge conversational AI model that can understand and generate
+        human-like text. By using the <a href="https://beta.openai.com/signup/" target="_blank">OpenAI API</a>, we were
+        able to integrate ChatGPT into our website and build our client, Futura, their own chatbot, which allows users
+        to get answers to specific questions they may have about the company. The API Key allows us to connect our
+        chatbot to the Open AI LLM (Large Language Model). On top of this we provided Open AI with custom data abiout
+        Futura creating a personalized chatbot.</p>
     </div>
   </div>
-  <button id="chat-toggle" class="chat-toggle" onclick="myFunction()">💬</button>
+</div>
 
-  <!-- Our footer -->
+
+
+<!-- Chatbot -->
+<div id="chat-container">
+  <div id="chat-box"></div>
+  <div id="input-container">
+    <input type="text" id="user-input" placeholder="Enter your question here...">
+    <button id="send-btn">Send</button>
+  </div>
+</div>
+<button id="chat-toggle" class="chat-toggle" onclick="myFunction()">💬</button>
+
+<!-- Our footer -->
+<!-- Chatbot -->
+<div id="chat-container">
+  <div id="chat-box"></div>
+  <div id="input-container">
+    <input type="text" id="user-input" placeholder="Enter your question here...">
+    <button id="send-btn">Send</button>
+  </div>
+</div>
+<button id="chat-toggle" class="chat-toggle" onclick="myFunction()">💬</button>
+
+<!-- Our footer -->
 <footer>
-        <hr id="footer-line-break">
-        <div class="footer-container">
-            <p class="footer-desc">Futura is a medical company that is hard at work striving to make the world a better
-                place.
-                Go check out our socials!</p>
-            <div class="footer-sub-container">
-                <div class="footer-links-container">
-                    <a class="footer-links" href="faqs.html">FAQ's</a>
-          <span>|</span>
-                    <a class="footer-links" href="citations.html">Citations</a>
-                    <span>|</span>
-                    <a class="footer-links" href="">Legal & Trademarks</a>
-                    <span>|</span>
-                    <a class="footer-links" href="">Terms of Service</a>
-                    <span class="footer-desc">|© 2024 Futura, Inc, All Rights Reserved.</span>
-                </div>
-                <!-- Futura's socials -->
-                <div class="footer-socials-container">
-                    <a class="social-item" href=""><img src="images/youtube.png" alt=""></a>
-                    <a class="social-item" href="https://www.instagram.com/futura_medical"><img
-                            src="images/instagram.png" alt=""></a>
-                    <a class="social-item" href="https://www.tiktok.com/@futura.medical"><img src="images/tiktok.png"
-                            alt=""></a>
-                    <a class="social-item" href="https://twitter.com/FuturaMedical_"><img src="images/twitter.png"
-                            alt=""></a>
-                    <a class="social-item" href=""><img
-                            src="images/facebook.png" alt=""></a>
-                </div>
-            </div>
-        </div>
-    </footer>
+  <hr id="footer-line-break">
+  <div class="footer-container">
+    <div class="contact-us">
+      <h1 class="contact-header">Contact Us</h1>
+      <ul>
+        <li>futuramedicalinc@gmail.com</li>
+        <li>860-970-6606</li>
+      </ul>
+    </div>
+    <div class="footer-sub-container">
+      <div class="footer-links-container">
+        <a class="footer-links" href="faqs.html">FAQ's</a>
+        <span>|</span>
+        <a class="footer-links" href="citations.html">Citations</a>
+        <span>|</span>
+        <a class="footer-links" href="review.html">Reviews</a>
+        <span>|</span>
+        <a class="footer-links" href="">Legal & Trademarks</a>
+        <span>|</span>
+        <a class="footer-links" href="">Terms of Service</a>
+        <span>|</span>
+        <a class="footer-links" href="">© 2024 Futura, Inc, All Rights Reserved.</a>
+      </div>
+      <!-- Futura's socials -->
+      <div class="footer-socials-container">
+        <a class="social-item" href=""><img src="images/youtube.png" alt="YouTube"></a>
+        <a class="social-item" href="https://www.instagram.com/futura_medical"><img src="images/instagram.png"
+            alt="Instagram"></a>
+        <a class="social-item" href="https://www.tiktok.com/@futura.medical"><img src="images/tiktok.png"
+            alt="TikTok"></a>
+        <a class="social-item" href="https://twitter.com/FuturaMedical_"><img src="images/twitter.png"
+            alt="Twitter"></a>
+        <a class="social-item" href=""><img src="images/facebook.png" alt="Facebook"></a>
+      </div>
+      <div class="web-developers">
+        <p>Web Developers - Arjun Pendharkar, Siddharth Santhosh, Paarth Rathod</p>
+      </div>
+    </div>
+  </div>
+</footer>
 <script src="chatbot.js"></script>
 </body>
 

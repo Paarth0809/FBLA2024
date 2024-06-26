@@ -7,7 +7,6 @@ body {
 
 /* Footer section */
 footer {
-  
   padding: 2rem 0;
 }
 
@@ -25,26 +24,33 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem; /* Reduced gap */
 }
 
-.contact-us,
-.web-developers {
-  text-align: center;
+.contact-us {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0; /* Ensure no extra margin */
 }
 
-.contact-header,
-.web-dev-header {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #6c757d;
+.contact-header {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: black;
 }
 
-.contact-us li,
-.web-dev-list li {
+.contact-us ul {
+  margin: 0;
+  padding: 0; /* Remove default padding */
+}
+
+.contact-us li {
   list-style: none;
   margin: 0.5rem 0;
-  color: #6c757d;
+  color: black;
+  text-align: left;
+  padding-left: 110px;
 }
 
 .footer-links-container {
@@ -53,23 +59,22 @@ footer {
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  margin: 3rem;
+  margin: 1rem 0; /* Reduced margin */
 }
 
 .footer-links {
-  color: #6c757d;
+  color: black;
   text-decoration: none;
   margin: 0 0.5rem;
   transition: color 0.3s, transform 0.3s;
 }
 
 .footer-links:hover {
-  
   transform: translateY(-2px);
 }
 
 .footer-desc {
-  color: #6c757d;
+  color: black;
   margin-left: 0.5rem;
   text-align: center;
   font-size: 0.875rem;
@@ -94,6 +99,11 @@ footer {
   opacity: 0.8;
 }
 
+.web-developers {
+  color: black;
+  text-align: center;
+}
+
 /* Responsive styles */
 @media (min-width: 1117px) {
   .footer-container {
@@ -104,12 +114,6 @@ footer {
 
   .footer-sub-container {
     flex: 1;
-    text-align: center;
-  }
-
-  .contact-us {
-    align-items: flex-start;
-    text-align: left;
   }
 
   .footer-links-and-socials {
@@ -122,10 +126,5 @@ footer {
   .footer-links-container {
     flex-wrap: nowrap;
     gap: 1rem;
-  }
-
-  .web-developers {
-    align-items: flex-end;
-    text-align: right;
   }
 }

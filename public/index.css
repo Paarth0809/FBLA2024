@@ -225,6 +225,13 @@ footer {
  #benefits {
    font-size: 1rem;
  }
+
+ h2 {
+  font-size: 2rem;
+ }
+ .counter {
+  font-size: 2rem;
+ }
 }
 
 

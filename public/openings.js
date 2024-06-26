@@ -18,8 +18,6 @@ document.getElementById('scroll-right').addEventListener('click', function() {
 
 
 
-// Job search and filters
-
 
 
   

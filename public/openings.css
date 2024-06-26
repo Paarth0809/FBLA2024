@@ -152,4 +152,11 @@ header {
     color: #007bff;
     font-size: 1.5rem;
     display: none;
+    flex: none;
+    margin-right: 14.5rem;
+}
+
+#error {
+    text-align: center;
+    margin-right: 7rem;
 }

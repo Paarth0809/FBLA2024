@@ -13,7 +13,7 @@ function addAppointmentsToPage(appointment) {
     const selectedDate = document.createElement('h4');
     selectedDate.textContent = appointment.selectedDate;
     appointmentDiv.appendChild(selectedDate);
-    console.log ("selectedDate: ", selectedDate);
+    console.log("selectedDate: ", selectedDate);
 
     const selectedTime = document.createElement('h4');
     selectedTime.textContent = appointment.selectedTime;

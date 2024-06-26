@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="openings.css" />
   <link rel="stylesheet" href="navbar.css" />
   <link rel="stylesheet" href="footer.css" />
-  <link rel="stylesheet" href="chatbot.css"/>
+  <link rel="stylesheet" href="chatbot.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -162,7 +162,7 @@
         </div>
       </div>
       <div id="no-results">
-        <p>No job openings match your search criteria.</p>
+        <p id="error">No job openings match your search criteria.</p>
       </div>
       <button class="scroll-arrow right-arrow">&#10095;</button>
     </div>
@@ -171,164 +171,166 @@
     </div>
 
 
-    
-   <!-- Chatbot -->
-  <div id="chat-container">
-    <div id="chat-box"></div>
-    <div id="input-container">
-      <input type="text" id="user-input" placeholder="Enter your question here...">
-      <button id="send-btn">Send</button>
-    </div>
-  </div>
-  <button id="chat-toggle" class="chat-toggle" onclick="myFunction()">💬</button>
 
-  <!-- Our footer -->
-<footer>
-  <div id="footer-line-break"></div>
-  <div class="footer-container">
-    <div class="footer-sub-container contact-us">
-      <h2 class="contact-header">Contact Us</h2>
-      <ul>
-        <li>Email: contact@example.com</li>
-        <li>Phone: (123) 456-7890</li>
-      </ul>
-    </div>
-    <div class="footer-sub-container footer-links-and-socials">
-      <div class="footer-links-container">
-        <a class="footer-links" href="faqs.html">FAQ's</a>
-        <span>|</span>
-        <a class="footer-links" href="citations.html">Citations</a>
-        <span>|</span>
-        <a class="footer-links" href="">Legal & Trademarks</a>
-        <span>|</span>
-        <a class="footer-links" href="">Terms of Service</a>
-        <span class="footer-desc">| © 2024 Futura, Inc, All Rights Reserved.</span>
-      </div>
-      <!-- Futura's socials -->
-      <div class="footer-socials-container">
-        <a class="social-item" href=""><img src="images/youtube.png" alt="YouTube"></a>
-        <a class="social-item" href="https://www.instagram.com/futura_medical"><img src="images/instagram.png"
-            alt="Instagram"></a>
-        <a class="social-item" href="https://www.tiktok.com/@futura.medical"><img src="images/tiktok.png" alt="TikTok"></a>
-        <a class="social-item" href="https://twitter.com/FuturaMedical_"><img src="images/twitter.png" alt="Twitter"></a>
-        <a class="social-item" href=""><img src="images/facebook.png" alt="Facebook"></a>
+    <!-- Chatbot -->
+    <div id="chat-container">
+      <div id="chat-box"></div>
+      <div id="input-container">
+        <input type="text" id="user-input" placeholder="Enter your question here...">
+        <button id="send-btn">Send</button>
       </div>
     </div>
-    <div class="footer-sub-container web-developers">
-      <h2 class="web-dev-header">Web Developers</h2>
-      <ul class="web-dev-list">
-        <li>Paarth Rathod</li>
-        <li>Sidharth Santhosh</li>
-        <li>Arjun Pendharkar</li>
-      </ul>
-    </div>
-  </div>
-</footer>
+    <button id="chat-toggle" class="chat-toggle" onclick="myFunction()">💬</button>
+
+    <!-- Our footer -->
+    <footer>
+      <hr id="footer-line-break">
+      <div class="footer-container">
+        <div class="contact-us">
+          <h1 class="contact-header">Contact Us</h1>
+          <ul>
+            <li>futuramedicalinc@gmail.com</li>
+            <li>860-970-6606</li>
+          </ul>
+        </div>
+        <div class="footer-sub-container">
+          <div class="footer-links-container">
+            <a class="footer-links" href="faqs.html">FAQ's</a>
+            <span>|</span>
+            <a class="footer-links" href="citations.html">Citations</a>
+            <span>|</span>
+            <a class="footer-links" href="review.html">Reviews</a>
+            <span>|</span>
+            <a class="footer-links" href="">Legal & Trademarks</a>
+            <span>|</span>
+            <a class="footer-links" href="">Terms of Service</a>
+            <span>|</span>
+            <a class="footer-links" href="">© 2024 Futura, Inc, All Rights Reserved.</a>
+          </div>
+          <!-- Futura's socials -->
+          <div class="footer-socials-container">
+            <a class="social-item" href=""><img src="images/youtube.png" alt="YouTube"></a>
+            <a class="social-item" href="https://www.instagram.com/futura_medical"><img src="images/instagram.png"
+                alt="Instagram"></a>
+            <a class="social-item" href="https://www.tiktok.com/@futura.medical"><img src="images/tiktok.png"
+                alt="TikTok"></a>
+            <a class="social-item" href="https://twitter.com/FuturaMedical_"><img src="images/twitter.png"
+                alt="Twitter"></a>
+            <a class="social-item" href=""><img src="images/facebook.png" alt="Facebook"></a>
+          </div>
+          <div class="web-developers">
+            <p>Web Developers - Arjun Pendharkar, Siddharth Santhosh, Paarth Rathod</p>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        const searchInput = document.getElementById('search');
-        const locationSelect = document.getElementById('location');
-        const teamSelect = document.getElementById('team');
-        const jobCards = document.querySelectorAll('.job-card');
-        const noResults = document.getElementById('no-results');
+// Job search and filters
 
-        function filterJobs() {
-          const searchValue = searchInput.value.toLowerCase();
-          const locationValue = locationSelect.value.toLowerCase();
-          const teamValue = teamSelect.value.toLowerCase();
+document.addEventListener('DOMContentLoaded', function () {
+    const searchInput = document.getElementById('search');
+    const locationSelect = document.getElementById('location');
+    const teamSelect = document.getElementById('team');
+    const jobCards = document.querySelectorAll('.job-card');
+    const noResults = document.getElementById('no-results');
 
-          let matchesFound = false;
+    function filterJobs() {
+      const searchValue = searchInput.value.toLowerCase();
+      const locationValue = locationSelect.value.toLowerCase();
+      const teamValue = teamSelect.value.toLowerCase();
 
-          jobCards.forEach(card => {
-            const title = card.querySelector('h3').textContent.toLowerCase();
-            const location = card.querySelector('.cardItem:nth-child(2)').textContent.toLowerCase();
-            const team = card.querySelector('.cardItem:nth-child(3)').textContent.toLowerCase();
+      let matchesFound = false;
 
-            const matchesSearch = title.includes(searchValue);
-            const matchesLocation = locationValue === 'all' || location.includes(locationValue);
-            const matchesTeam = teamValue === 'all' || team.includes(teamValue);
+      jobCards.forEach(card => {
+        const title = card.querySelector('h3').textContent.toLowerCase();
+        const location = card.querySelector('.cardItem:nth-child(2)').textContent.toLowerCase();
+        const team = card.querySelector('.cardItem:nth-child(3)').textContent.toLowerCase();
 
-            if (matchesSearch && matchesLocation && matchesTeam) {
-              card.style.display = '';
-              matchesFound = true;
-            } else {
-              card.style.display = 'none';
-            }
-          });
+        const matchesSearch = title.includes(searchValue);
+        const matchesLocation = locationValue === 'all' || location.includes(locationValue);
+        const matchesTeam = teamValue === 'all' || team.includes(teamValue);
 
-          noResults.style.display = matchesFound ? 'none' : 'block';
+        if (matchesSearch && matchesLocation && matchesTeam) {
+          card.style.display = '';
+          matchesFound = true;
+        } else {
+          card.style.display = 'none';
         }
-
-        searchInput.addEventListener('input', filterJobs);
-        locationSelect.addEventListener('change', filterJobs);
-        teamSelect.addEventListener('change', filterJobs);
       });
 
-    </script>
+      noResults.style.display = matchesFound ? 'none' : 'block';
+    }
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-  const searchInput = document.getElementById('search');
-  const locationSelect = document.getElementById('location');
-  const teamSelect = document.getElementById('team');
-  const jobCards = document.querySelectorAll('.job-card');
-  const noResults = document.getElementById('no-results');
-  const jobListings = document.querySelector('.job-listings');
-  const leftArrow = document.querySelector('.left-arrow');
-  const rightArrow = document.querySelector('.right-arrow');
+    searchInput.addEventListener('input', filterJobs);
+    locationSelect.addEventListener('change', filterJobs);
+    teamSelect.addEventListener('change', filterJobs);
+  });
 
-  function filterJobs() {
-    const searchValue = searchInput.value.toLowerCase();
-    const locationValue = locationSelect.value.toLowerCase();
-    const teamValue = teamSelect.value.toLowerCase();
 
-    let matchesFound = false;
 
-    jobCards.forEach(card => {
-      const title = card.querySelector('h3').textContent.toLowerCase();
-      const location = card.querySelector('.cardItem:nth-child(2)').textContent.toLowerCase();
-      const team = card.querySelector('.cardItem:nth-child(3)').textContent.toLowerCase();
 
-      const matchesSearch = title.includes(searchValue);
-      const matchesLocation = locationValue === 'all' || location.includes(locationValue);
-      const matchesTeam = teamValue === 'all' || team.includes(teamValue);
+  document.addEventListener('DOMContentLoaded', function() {
+const searchInput = document.getElementById('search');
+const locationSelect = document.getElementById('location');
+const teamSelect = document.getElementById('team');
+const jobCards = document.querySelectorAll('.job-card');
+const noResults = document.getElementById('no-results');
+const jobListings = document.querySelector('.job-listings');
+const leftArrow = document.querySelector('.left-arrow');
+const rightArrow = document.querySelector('.right-arrow');
 
-      if (matchesSearch && matchesLocation && matchesTeam) {
-        card.style.display = '';
-        matchesFound = true;
-      } else {
-        card.style.display = 'none';
-      }
-    });
+function filterJobs() {
+const searchValue = searchInput.value.toLowerCase();
+const locationValue = locationSelect.value.toLowerCase();
+const teamValue = teamSelect.value.toLowerCase();
 
-    noResults.style.display = matchesFound ? 'none' : 'block';
+let matchesFound = false;
+
+jobCards.forEach(card => {
+  const title = card.querySelector('h3').textContent.toLowerCase();
+  const location = card.querySelector('.cardItem:nth-child(2)').textContent.toLowerCase();
+  const team = card.querySelector('.cardItem:nth-child(3)').textContent.toLowerCase();
+
+  const matchesSearch = title.includes(searchValue);
+  const matchesLocation = locationValue === 'all' || location.includes(locationValue);
+  const matchesTeam = teamValue === 'all' || team.includes(teamValue);
+
+  if (matchesSearch && matchesLocation && matchesTeam) {
+    card.style.display = '';
+    matchesFound = true;
+  } else {
+    card.style.display = 'none';
   }
+});
 
-  searchInput.addEventListener('input', filterJobs);
-  locationSelect.addEventListener('change', filterJobs);
-  teamSelect.addEventListener('change', filterJobs);
+noResults.style.display = matchesFound ? 'none' : 'block';
+}
 
-  leftArrow.addEventListener('click', function() {
-    jobListings.scrollBy({
-      left: -400,
-      behavior: 'smooth'
-    });
-  });
+searchInput.addEventListener('input', filterJobs);
+locationSelect.addEventListener('change', filterJobs);
+teamSelect.addEventListener('change', filterJobs);
 
-  rightArrow.addEventListener('click', function() {
-    jobListings.scrollBy({
-      left: 400,
-      behavior: 'smooth'
-    });
-  });
+leftArrow.addEventListener('click', function() {
+jobListings.scrollBy({
+  left: -400,
+  behavior: 'smooth'
+});
+});
+
+rightArrow.addEventListener('click', function() {
+jobListings.scrollBy({
+  left: 400,
+  behavior: 'smooth'
+});
+});
 });
 
     </script>
 
 
 
-<script src="chatbot.js"></script>
+    <script src="chatbot.js"></script>
 </body>
 
 </html>

@@ -4,31 +4,31 @@ body {
     background-color: #ffffff;
     color: #333;
     margin: 0;
-    padding: 0;
-    
+    padding:0;
 }
 
 /* Login First Element */
 /* Login First Element */
 #loginFirst {
-    background-color: #ffcccc; /* Light red background for visibility */
-    color: #d9534f; /* Darker red text for contrast */
-    font-family: 'Poppins', sans-serif; /* Consistent font */
-    text-align: center; /* Centered text */
+    background-color: #ffcccc; 
+    color: #d9534f; 
+    font-family: 'Poppins', sans-serif; 
+    text-align: center; 
     padding: 1rem; /* Padding for space around the text */
     border-radius: 8px; /* Rounded corners */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
     max-width: 70%; /* Maximum width as 90% of the viewport */
-    width: 70%; /* Width also set to 90% for responsiveness */
+    width: 70%; /* Width also set to 70% for responsiveness */
     margin: 30rem auto; /* Center horizontally with vertical margin */
-    font-size: 1.2rem; /* Slightly larger text */
-    font-weight: 600; /* Bold text */
-    /* position: relative; Position fixed to center in viewport */
- 
-    
+    font-size: 1.2rem; 
+    font-weight: 600;
     
 }
 
+#vaccineContainer {
+    margin-bottom: 200px;
+    margin-top: 200px;
+}
 
 @media screen and (max-width: 480px) {
     #loginFirst {

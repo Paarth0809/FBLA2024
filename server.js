@@ -45,7 +45,7 @@ const getUsers = () => {
 const saveUsers = (users) => {
   fs.writeFileSync(usersFile, JSON.stringify(users));
 };
-
+// sign up endpoint
 app.post('/signup', async (req, res) => {
   const { signupEmail, password, fullName, age, phoneNumber } = req.body;
   const users = getUsers();
@@ -204,7 +204,7 @@ app.post('/api/ask', async (req, res) => {
         { role: 'system', content: fileContent },
         { role: 'user', content: question },
       ],
-      max_tokens: 50,
+      max_tokens: 1000,
       temperature: 0.8
     });
 

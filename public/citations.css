@@ -1,50 +1,194 @@
-/* index.css */
-body {
-    font-family: 'Poppins', sans-serif;
+/* Basic resets for consistency across browsers */
+* {
     margin: 0;
     padding: 0;
-    
+    box-sizing: border-box;
 }
 
-.navbar{
-    
-    
-    color: #f4f4f4;
-    
-    transition: all 0.5s ease;
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #ffffff; /* Light grey background for contrast */
+    color: #333; /* Dark grey text for readability */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 20px;
 }
 
+/* Heading styles */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #007bff; /* Blue color for main heading */
+    text-transform: uppercase; /* Make heading text uppercase */
+    letter-spacing: 1px; /* Slight letter spacing for style */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
 
+#citation-sources {
+    padding-top: 40px;
+}
 
-
-
-
-
+/* General container styles */
 .master-container {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    justify-content: space-around;
-    margin: 20px;
-}
-
-.container-for-sources {
-    flex-basis: 45%;
-    margin: 10px;
+    gap: 20px; /* Reduced spacing between columns for better mobile view */
+    width: 100%;
+    max-width: 1200px;
     padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); */
+    border-radius: 15px;
+    background: rgb(255, 255, 255); /* Slightly translucent background */
+    backdrop-filter: blur(10px); /* Blur effect for the background */
+    margin-top: 20px;
+    margin: 0 auto;
 }
 
-.small-container-items {
+/* Container for sources */
+.container-for-sources {
+    flex: 1 1 45%;
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1); /* Translucent, almost see-through background for content boxes */
+    backdrop-filter: blur(10px); /* Blur effect for the background */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Soft shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+    position: relative;
+}
+
+/* Hover effect to slightly lift the box and deepen shadow */
+.container-for-sources:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+h3.images-other {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #007bff; /* Blue color for section headers */
+    text-transform: uppercase; /* Uppercase for section headers */
+    letter-spacing: 1px;
+}
+
+/* Styling individual citation items */
+.citation-item {
+    margin-bottom: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.7); /* Slightly translucent white background for items */
+    border-radius: 15px;
+    transition: transform 0.3s ease, background 0.3s ease; /* Smooth transition for hover effects */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow for individual items */
+    opacity: 0.8; /* Initial opacity for fade-in effect */
+}
+
+/* Hover effect to scale up slightly and fade in text */
+.citation-item:hover {
+    background: rgba(255, 255, 255, 0.9); /* Solid white on hover */
+    transform: scale(1.02); /* Slight scaling effect on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Deepen shadow on hover */
+    opacity: 1; /* Fully visible text on hover */
+}
+
+.citation-item h4 {
+    font-size: 1.5rem;
+    color: #0056b3; /* Darker blue for citation titles */
     margin-bottom: 10px;
 }
 
-.small-container-items a {
-    color: #333;
-    text-decoration: none;
+.citation-item p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555; /* Dark grey for citation text */
 }
 
-/* Add some hover effects */
-.links:hover, .footer-links:hover, .small-container-items a:hover {
-    color: #070bf9;
+/* Link styles within citation items */
+.citation-item a {
+    color: #007bff; /* Blue color for links */
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 1px solid transparent; /* Bottom border for hover effect */
+    transition: color 0.3s ease, border-bottom 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.citation-item a:hover {
+    color: #0056b3; /* Darker blue on hover */
+    border-bottom: 1px solid #0056b3; /* Solid border bottom on hover */
+}
+
+/* Responsive design adjustments */
+@media (max-width: 1024px) {
+    /* Adjust flexbox direction for medium-sized screens */
+    .master-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container-for-sources {
+        flex: 1 1 80%;
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 2rem; /* Slightly smaller heading */
+    }
+}
+
+@media (max-width: 768px) {
+    /* Stacking containers for small screens */
+    .master-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container-for-sources {
+        flex: 1 1 90%;
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 1.8rem; /* Smaller heading */
+    }
+
+    h3.images-other {
+        font-size: 1.5rem; /* Smaller section header */
+    }
+
+    .citation-item h4 {
+        font-size: 1.3rem; /* Smaller citation title */
+    }
+
+    .citation-item p {
+        font-size: 1rem; /* Smaller paragraph text */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Adjustments for extra small screens */
+    .container-for-sources {
+        flex: 1 1 100%;
+        padding: 15px; /* Reduced padding for smaller screens */
+    }
+
+    h1 {
+        font-size: 1.5rem; /* Smaller heading */
+        margin-bottom: 20px;
+    }
+
+    h3.images-other {
+        font-size: 1.3rem; /* Smaller section header */
+        margin-bottom: 15px;
+    }
+
+    .citation-item h4 {
+        font-size: 1.1rem; /* Smaller citation title */
+    }
+
+    .citation-item p {
+        font-size: 0.9rem; /* Smaller paragraph text */
+    }
 }

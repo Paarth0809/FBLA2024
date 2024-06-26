@@ -128,9 +128,10 @@ justify-content: center;
     width: 100%;
 }
 .applyDescription{
-font-size: 150%;
-color: #6C757D;
-text-align: center;
+  font-size: 150%;
+  text-align: center;
+  color: #6C757D;
+  font-family: "Poppins", sans-serif;
 }
 
 
