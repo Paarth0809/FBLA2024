@@ -1,5 +1,5 @@
 // top nav open menu when clicked on hamburger icon
-function myFunction() {
+function hamburgerFunction() {
   var x = document.getElementById("myLinks");
   if (x.style.display === "block") {
     x.style.display = "none";
