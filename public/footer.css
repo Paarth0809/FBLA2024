@@ -24,14 +24,16 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem; /* Reduced gap */
+  gap: 1rem;
+  /* Reduced gap */
 }
 
 .contact-us {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 0; /* Ensure no extra margin */
+  margin-bottom: 0;
+  /* Ensure no extra margin */
 }
 
 .contact-header {
@@ -42,7 +44,8 @@ footer {
 
 .contact-us ul {
   margin: 0;
-  padding: 0; /* Remove default padding */
+  padding: 0;
+  /* Remove default padding */
 }
 
 .contact-us li {
@@ -59,7 +62,8 @@ footer {
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  margin: 1rem 0; /* Reduced margin */
+  margin: 1rem 0;
+  /* Reduced margin */
 }
 
 .footer-links {

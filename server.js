@@ -7,7 +7,7 @@ const path = require('path');
 // import OpenAI from 'openai';
 // import { config } from 'dotenv';
 const OpenAI = require('openai')
-const {config} = require('dotenv')
+const { config } = require('dotenv')
 const { v4: uuidv4 } = require('uuid');
 const app = express();
 const port = 3000;
@@ -62,7 +62,7 @@ app.post('/signup', async (req, res) => {
   res.status(201).send('User created');
 });
 
-app.post('/login', async function(req, res) {
+app.post('/login', async function (req, res) {
   const { username, password } = req.body;
   const users = getUsers();
   const user = users.find(user => user.signupEmail.toLowerCase() === username.toLowerCase());
@@ -147,32 +147,32 @@ function saveAppointments(appointments) {
 };
 
 // Endpoint to save booked appointments
-app.post('/api/book-appointment', function(req, res) {
-    const appointment = req.body;
-    console.log("req.body: ", req.body);
-    const signupEmail = req.session.user.username;
-    console.log("signupEmail: ", signupEmail);
+app.post('/api/book-appointment', function (req, res) {
+  const appointment = req.body;
+  console.log("req.body: ", req.body);
+  const signupEmail = req.session.user.username;
+  console.log("signupEmail: ", signupEmail);
 
-    const bookedAppointments = getAppointments();
-    if (!bookedAppointments[signupEmail]) {
-        bookedAppointments[signupEmail] = [];
-    }
-    //appointment.id = uuidv4(); // Assign a unique ID to the appointment
-    bookedAppointments[signupEmail].push(appointment);
-    console.log("booked appointments: ", bookedAppointments);
-    saveAppointments(bookedAppointments);
-    res.status(201).json(appointment);
+  const bookedAppointments = getAppointments();
+  if (!bookedAppointments[signupEmail]) {
+    bookedAppointments[signupEmail] = [];
+  }
+  //appointment.id = uuidv4(); // Assign a unique ID to the appointment
+  bookedAppointments[signupEmail].push(appointment);
+  console.log("booked appointments: ", bookedAppointments);
+  saveAppointments(bookedAppointments);
+  res.status(201).json(appointment);
 });
 
 // Endpoint to retrieve booked appointments for a user
 app.get('/api/appointments', (req, res) => {
-    const user = req.session.user;
-    if (!user) {
-        return res.status(401).send({ message: 'Unauthorized' });
-    }
-    const bookedAppointments = getAppointments();
-    console.log("Appointments: ", bookedAppointments[user.username]);
-    res.status(200).send(bookedAppointments[user.username] || []);
+  const user = req.session.user;
+  if (!user) {
+    return res.status(401).send({ message: 'Unauthorized' });
+  }
+  const bookedAppointments = getAppointments();
+  console.log("Appointments: ", bookedAppointments[user.username]);
+  res.status(200).send(bookedAppointments[user.username] || []);
 
 });
 

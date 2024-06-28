@@ -308,7 +308,7 @@ async function submitForm(event) {
         alert('Please fill out all the fields.');
         return;
     }
-    if (phone<10) {
+    if (phone < 10) {
         alert('Not a valid phone number');
         return;
     }

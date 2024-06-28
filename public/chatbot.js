@@ -40,8 +40,8 @@ function myFunction() { //Toggles the chatbot button
 
 async function askGpt(question) {
     try {
-        
-        const response = await fetch('/api/ask', { 
+
+        const response = await fetch('/api/ask', {
             method: 'POST', //Method of sending data to server for processing
             headers: {
                 'Content-Type': 'application/json'
@@ -74,8 +74,8 @@ function startChatbot() {
         const question = userInput.value.trim(); //Trims user question of whitespaces
         if (question) {
             printSlow(question, 'user-message'); //Prints user message slowly
-            userInput.value = ''; 
-            askGpt(question); 
+            userInput.value = '';
+            askGpt(question);
         }
     }
 }

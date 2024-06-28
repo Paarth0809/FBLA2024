@@ -56,7 +56,7 @@ function sendEmail(fileName, base64data) {
             "<br>Reason to Work: " + document.getElementById("q1").value,
         Attachments: [
             {
-                 name: fileName,
+                name: fileName,
                 data: base64data
             }]
 

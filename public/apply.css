@@ -1,6 +1,7 @@
 body {
     font-family: "Poppins";
 }
+
 @keyframes formslide {
     from {
         transform: translateX(-300px);
@@ -12,7 +13,7 @@ body {
 }
 
 
-.formslide{
+.formslide {
     animation: formslide 1s;
 }
 
@@ -21,7 +22,7 @@ body {
     height: auto;
     margin: 0 auto;
     border-radius: 20px;
-    
+
 }
 
 
@@ -30,22 +31,22 @@ form {
     text-align: left;
     padding: 20px;
     border-radius: 20px;
-   
+
 }
 
 
 
-.form-item:hover{
+.form-item:hover {
     transform: translateY(-5px);
 
 }
 
-.form-item-container{
+.form-item-container {
     display: flex;
     flex-direction: column;
 }
 
-#submit-button{
+#submit-button {
     width: 200px;
     height: 50px;
     margin: 0 auto;
@@ -55,24 +56,24 @@ form {
     border-radius: 30px;
     transition: all 0.5s;
     border: none;
-    
-    
+
+
 }
 
-#submit-button:hover{
-    
+#submit-button:hover {
+
     transform: translateY(-5px);
 }
 
-.textbox{
+.textbox {
     font-size: 20px;
 }
 
-textarea{
+textarea {
     margin: 0 auto;
 }
 
-#job-application{
+#job-application {
     font-size: 3rem;
     text-align: center;
     color: #007bff;
@@ -82,7 +83,7 @@ textarea{
     transition: all 0.5s;
 }
 
-.subhead{
+.subhead {
     font-size: 25px;
     text-align: left;
     color: #6C757D;
@@ -90,31 +91,31 @@ textarea{
 
 .sign-input {
     font-family: Brush Script MT, Brush Script Std, cursive;
-    
-}
-
-#submit-button-container{
-display: flex;
-justify-content: center;
 
 }
 
-#q1{
+#submit-button-container {
+    display: flex;
+    justify-content: center;
+
+}
+
+#q1 {
     width: 100%;
     min-height: 4rem;
 }
 
-.four-square-form-item{
+.four-square-form-item {
     width: 48%;
 
 }
 
-.address-container{
+.address-container {
     display: flex;
     justify-content: space-between;
 }
 
-.form-item{
+.form-item {
     margin-bottom: .8rem;
     border-radius: 5px;
     animation: formitemslide 1s;
@@ -127,46 +128,47 @@ justify-content: center;
     height: 2rem;
     width: 100%;
 }
-.applyDescription{
-  font-size: 150%;
-  text-align: center;
-  color: #6C757D;
-  font-family: "Poppins", sans-serif;
+
+.applyDescription {
+    font-size: 150%;
+    text-align: center;
+    color: #6C757D;
+    font-family: "Poppins", sans-serif;
 }
 
 
 @media screen and (max-width: 768px) {
+
     /* Adjustments for smaller screens */
     .navbar {
-      flex-direction: column;
-      align-items: center;
+        flex-direction: column;
+        align-items: center;
     }
-    
-    .navbar a {
-      margin: 5px 0;
-    }
-    
-    .container {
-      width: 90%;
-    }
-    
-   
-    
-    #Gradeintext {
-      font-size: 4rem;
-    }
-    
-    #benefits {
-      font-size: 1rem;
-    }
-    
-    #Apply {
-      width: 100%;
-    }
-    .four-square-form-item{
-        width: 47%;
-    
-    }
-  }
 
-  
+    .navbar a {
+        margin: 5px 0;
+    }
+
+    .container {
+        width: 90%;
+    }
+
+
+
+    #Gradeintext {
+        font-size: 4rem;
+    }
+
+    #benefits {
+        font-size: 1rem;
+    }
+
+    #Apply {
+        width: 100%;
+    }
+
+    .four-square-form-item {
+        width: 47%;
+
+    }
+}

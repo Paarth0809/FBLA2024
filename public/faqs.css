@@ -1,4 +1,3 @@
-
 body {
     font-family: Arial, sans-serif;
 }
@@ -13,9 +12,11 @@ body {
     max-width: 800px;
     margin: 0 auto;
 }
+
 .faq-toggle {
     display: none;
 }
+
 .faq-label {
     display: block;
     background: #f9f9f9;
@@ -27,9 +28,11 @@ body {
     position: relative;
     transition: background 0.3s ease;
 }
+
 .faq-label:hover {
     background: #f0f0f0;
 }
+
 .faq-label::after {
     content: '+';
     position: absolute;
@@ -38,9 +41,11 @@ body {
     transform: translateY(-50%);
     transition: transform 0.3s ease;
 }
-.faq-toggle:checked + .faq-label::after {
+
+.faq-toggle:checked+.faq-label::after {
     transform: translateY(-50%) rotate(45deg);
 }
+
 .faq-content {
     max-height: 0;
     overflow: hidden;
@@ -53,7 +58,8 @@ body {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
-.faq-toggle:checked + .faq-label + .faq-content {
+
+.faq-toggle:checked+.faq-label+.faq-content {
     max-height: 200px;
     padding: 15px;
 }

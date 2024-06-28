@@ -4,25 +4,31 @@ body {
     background-color: #ffffff;
     color: #333;
     margin: 0;
-    padding:0;
+    padding: 0;
 }
 
 /* Login First Element */
 /* Login First Element */
 #loginFirst {
-    background-color: #ffcccc; 
-    color: #d9534f; 
-    font-family: 'Poppins', sans-serif; 
-    text-align: center; 
-    padding: 1rem; /* Padding for space around the text */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
-    max-width: 70%; /* Maximum width as 90% of the viewport */
-    width: 70%; /* Width also set to 70% for responsiveness */
-    margin: 30rem auto; /* Center horizontally with vertical margin */
-    font-size: 1.2rem; 
+    background-color: #ffcccc;
+    color: #d9534f;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    padding: 1rem;
+    /* Padding for space around the text */
+    border-radius: 8px;
+    /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Light shadow for depth */
+    max-width: 70%;
+    /* Maximum width as 90% of the viewport */
+    width: 70%;
+    /* Width also set to 70% for responsiveness */
+    margin: 30rem auto;
+    /* Center horizontally with vertical margin */
+    font-size: 1.2rem;
     font-weight: 600;
-    
+
 }
 
 #vaccineContainer {
@@ -32,7 +38,8 @@ body {
 
 @media screen and (max-width: 480px) {
     #loginFirst {
-        margin: 15rem auto; /* Reduce margin for smaller screens */
+        margin: 15rem auto;
+        /* Reduce margin for smaller screens */
     }
 }
 
@@ -43,9 +50,11 @@ body {
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     padding: 30px;
-    max-width: 600px; /* Maximum width */
+    max-width: 600px;
+    /* Maximum width */
     text-align: center;
-    margin: 2rem auto; /* Center horizontally with vertical margin */
+    margin: 2rem auto;
+    /* Center horizontally with vertical margin */
 }
 
 /* Headings */
@@ -73,7 +82,8 @@ button {
     padding: 12px 24px;
     cursor: pointer;
     margin: 10px 0;
-    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease; /* Added color transition */
+    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+    /* Added color transition */
     font-size: 16px;
     position: relative;
     overflow: hidden;
@@ -81,19 +91,24 @@ button {
 
 button::after {
     font-family: FontAwesome;
-    content: '\f105'; /* Unicode for your desired icon */
-    font-size: 14px; /* Adjust the size */
+    content: '\f105';
+    /* Unicode for your desired icon */
+    font-size: 14px;
+    /* Adjust the size */
     position: absolute;
     top: 50%;
-    right: 15px; /* Adjust the position to fit better */
+    right: 15px;
+    /* Adjust the position to fit better */
     transform: translateY(-50%);
     opacity: 0;
-    transition: opacity 0.3s ease, right 0.3s ease; /* Add transition for positioning */
+    transition: opacity 0.3s ease, right 0.3s ease;
+    /* Add transition for positioning */
 }
 
 button:hover::after {
     opacity: 1;
-    right: 10px; /* Move the icon slightly on hover for a better effect */
+    right: 10px;
+    /* Move the icon slightly on hover for a better effect */
 }
 
 
@@ -224,6 +239,7 @@ input[type="radio"]:checked::before {
         transform: translateY(-50px);
         opacity: 0;
     }
+
     100% {
         transform: translateY(0);
         opacity: 1;

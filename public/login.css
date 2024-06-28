@@ -1,73 +1,72 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  
-  }
-  
-#login-form{
-    width: 300px;
-    margin: 50px auto;
-    padding: 30px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    margin-bottom: 75px;
-  }
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 
-  #login-header {
-    margin-top: 75px;
-  }
-  
-  h1 {
-    text-align: center;
-    color: #333;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 10px;
-  }
-  
-  #loginEmail {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
+}
 
-  #login-password {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
-  
-  button {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #007BFF;
-    color: #fff;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
+#login-form {
+  width: 300px;
+  margin: 50px auto;
+  padding: 30px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 75px;
+}
 
-  .smallSignup {
-    color: #007BFF;
-  }
-  
-  #message {
-    width: 300px;
-    margin: 0 auto;
-    padding: 10px;
-    color: #007BFF;
-  }
-  
+#login-header {
+  margin-top: 75px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+#loginEmail {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+#login-password {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007BFF;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.smallSignup {
+  color: #007BFF;
+}
+
+#message {
+  width: 300px;
+  margin: 0 auto;
+  padding: 10px;
+  color: #007BFF;
+}

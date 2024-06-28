@@ -1,19 +1,20 @@
-
-
-
 /* Chat Container Styling */
 #chat-container {
     width: 400px;
-    position: fixed; /* Fixes the position relative to the viewport */
-    right: 10px; /* Moves the container to the right edge */
-    bottom: 15%; /* Position at the bottom */
+    position: fixed;
+    /* Fixes the position relative to the viewport */
+    right: 10px;
+    /* Moves the container to the right edge */
+    bottom: 15%;
+    /* Position at the bottom */
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
     background: #fff;
     color: #333;
     flex-direction: column;
-    max-height: 100vh; /* Limit height to avoid excessive scrolling */
+    max-height: 100vh;
+    /* Limit height to avoid excessive scrolling */
     animation: fadeIn 0.5s ease forwards;
     display: none;
 }
@@ -22,21 +23,26 @@
     flex: 1;
     padding: 20px;
     overflow-y: auto;
-    max-height: 70vh; /* Adjust to leave space for input */
+    max-height: 70vh;
+    /* Adjust to leave space for input */
     display: flex;
-    flex-direction: column; /* Ensures messages are stacked vertically */
+    flex-direction: column;
+    /* Ensures messages are stacked vertically */
 }
 
 .message {
-    display: inline-block; /* Ensure each message is on a new line */
+    display: inline-block;
+    /* Ensure each message is on a new line */
     padding: 12px;
     border-radius: 8px;
     word-wrap: break-word;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     animation: slideIn 0.3s ease;
     margin-bottom: 10px;
-    width: fit-content; /* Adjust width based on content */
-    max-width: 70%; /* Ensure the message doesn't exceed 70% of the container width */
+    width: fit-content;
+    /* Adjust width based on content */
+    max-width: 70%;
+    /* Ensure the message doesn't exceed 70% of the container width */
 }
 
 .user-message {
@@ -59,6 +65,7 @@
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -70,6 +77,7 @@
         opacity: 0;
         transform: scale(0.9);
     }
+
     to {
         opacity: 1;
         transform: scale(1);
@@ -110,10 +118,12 @@
 }
 
 #send-btn {
-    width: 80px; /* Adjust width as needed */
+    width: 80px;
+    /* Adjust width as needed */
     padding: 12px;
     border: none;
-    border-radius: 20px; /* Increase border-radius for more rounded edges */
+    border-radius: 20px;
+    /* Increase border-radius for more rounded edges */
     background-color: #007Bff;
     color: #fff;
     cursor: pointer;

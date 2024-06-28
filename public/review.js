@@ -16,7 +16,7 @@ document.getElementById('review-form').addEventListener('submit', async (event) 
     document.getElementById('name').value = null;
     document.getElementById('review').value = null;
     document.getElementById('rating').value = null;
-    
+
     if (response.ok) {
         const newReview = await response.json();
         addReviewToPage(newReview);

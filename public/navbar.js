@@ -15,7 +15,7 @@ async function updateNavbar() {
 
   const navbar = document.querySelector('.navbar');
   if (status.isLoggedIn) {
-      navbar.innerHTML = `
+    navbar.innerHTML = `
           <a href="index.html"><img src="images/Logo.png" id="logo" alt="Logo"></a>
           <a class="links" href="index.html">Home</a>
           <a class="links" href="openings.html">Job Openings</a>
@@ -25,7 +25,7 @@ async function updateNavbar() {
           <a class="links" id="Contactmargin" href="/logout">Log Out</a>
       `;
   } else {
-      navbar.innerHTML = `
+    navbar.innerHTML = `
           <a href="index.html"><img src="images/Logo.png" id="logo" alt="Logo"></a>
           <a class="links" href="index.html">Home</a>
           <a class="links" href="openings.html">Job Openings</a>
