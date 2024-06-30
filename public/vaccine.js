@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 function loadBookedSlots() {
     updateTimePicker();
-    updateDisabledDates();
+    // updateDisabledDates();
 }
 
 function selectOption(option) {
